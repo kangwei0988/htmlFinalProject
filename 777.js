@@ -187,7 +187,21 @@ function insertmb(pic) {
   var newNode = document.createElement("img");
   newNode.setAttribute("id", pic);
   newNode.setAttribute("class", 'MB');
-  newNode.setAttribute("width", 600);
+  if (pic == "H310M-K") {
+    newNode.setAttribute("width", 600);
+  }
+  if (pic == "PRIMEZ390-A") {
+    newNode.setAttribute("width", 660);
+  }
+  if (pic == "z87pro") {
+    newNode.setAttribute("width", 600);
+  }
+  if (pic == "ROGSTRIXB350-FGAMING") {
+    newNode.setAttribute("width", 600);
+  }
+  if (pic == "ROGSTRIXX470-FGAMING") {
+    newNode.setAttribute("width", 600);
+  }
   newNode.setAttribute("height", 600);
   newNode.setAttribute("src", typeName[whichType(pic)] + "/" + pic + ".png");
   newNode.setAttribute("style", "top:0px;left:150px;z-index:1;");
