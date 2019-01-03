@@ -122,7 +122,7 @@ function insertmb(pic) {
   plateVGANode.setAttribute("class", "MBPlateVga");
   plateVGANode.setAttribute("id", pic + "VgaPlate");
   if (pic == "H310M-K") {
-    plateVGANode.setAttribute("style", "top:355px;left:180px;z-index:2;width:425px;height:80px;");
+    plateVGANode.setAttribute("style", "top:355px;left:165px;z-index:2;width:425px;height:90px;");
   }
   if (pic == "PRIMEZ390-A") {
     plateVGANode.setAttribute("style", "top:355px;left:180px;z-index:2;width:425px;height:80px;");
@@ -191,7 +191,7 @@ function insertmb(pic) {
     newNode.setAttribute("width", 600);
   }
   if (pic == "PRIMEZ390-A") {
-    newNode.setAttribute("width", 660);
+    newNode.setAttribute("width", 500);
   }
   if (pic == "z87pro") {
     newNode.setAttribute("width", 600);
