@@ -55,6 +55,7 @@
             width: 10%;
             box-sizing: border-box;
             float: right;
+            border-radius: 5px;
         }
 
         nav ul {
@@ -70,7 +71,7 @@
             display: block;
         }
 
-        nav ul li {
+        #header nav ul li {
             position: relative;
             background-color: black;
             border-top: 2px solid lightgray;
@@ -79,7 +80,18 @@
             z-index: 999;
         }
 
-        nav ul li:hover {
+        #footer nav ul li {
+            top: -90px;
+            position: relative;
+            background-color: black;
+            border: 2px solid lightgray;
+            color: white;
+            box-sizing: border-box;
+            z-index: 999;
+            border-radius: 5px;
+        }
+
+        #header nav ul li:hover {
             color: lightblue;
         }
 
@@ -141,7 +153,7 @@
 
         #footer {
             width: 100%;
-            height: 60px;
+            height: 70px;
             position: absolute;
             bottom: 0px;
 
@@ -159,43 +171,53 @@
             outline: none;
         }
 
-        #list {
+        .list {
             top: 15px;
             position: relative;
             right: 0px;
         }
-        div.plate{
+
+        div.plate {
             position: absolute;
             /*margin: 1px;
             padding: 1px;*/
             border: 3px solid blue;
         }
-        .MBPlateRam,.MBPlateCpu,.MBPlatePcie,.MBPlateVga{
+
+        .MBPlateRam,
+        .MBPlateCpu,
+        .MBPlatePcie,
+        .MBPlateVga {
             position: absolute;
         }
-        img.MB{
-            position:absolute;
+
+        img.MB {
+            position: absolute;
         }
 
-        div.MBPlateCpu img{
+        div.MBPlateCpu img {
             width: 125px;
             height: 125px;
         }
-        div.MBPlatePcie img{
+
+        div.MBPlatePcie img {
             width: 135px;
             height: 25px;
         }
-        div.MBPlateRam img{
+
+        div.MBPlateRam img {
             width: 20px;
             height: 368px;
         }
-        div.MBPlateVga img{
+
+        div.MBPlateVga img {
             width: 425px;
             height: 80px;
         }
     </style>
 </head>
 <script src="777.js"></script>
+
 <body>
     <h1 style="background:url('textbackground.jpg');background-size:cover;width:300px;height:50px;">想玩自己組</h1>
     <div id="header">
@@ -203,13 +225,19 @@
             <nav>CPU
                 <ul>
                     <li id="a"><img src="intel.png" height="40px" width="80%"></li>
-                    <li onclick="insert(10,20,2,'i38100k',100,100)"><img src="i3.jpg" height="50px" width="50px">I3 8100k</li>
-                    <li onclick="insert(10,20,2,'i52500k',100,100)"><img src="i5.jpg" height="50px" width="50px">I5 2500k</li>
-                    <li onclick="insert(10,20,2,'i78700k',100,100)"><img src="i7.jpg" height="50px" width="50px">I7 8700k</li>
-                    <li onclick="insert(10,20,2,'i99900k',100,100)"><img src="i9.png" height="50px" width="50px">I9 9900k</li>
+                    <li onclick="insert(10,20,2,'i38100k',100,100)"><img src="i3.jpg" height="50px" width="50px">I3
+                        8100k</li>
+                    <li onclick="insert(10,20,2,'i52500k',100,100)"><img src="i5.jpg" height="50px" width="50px">I5
+                        2500k</li>
+                    <li onclick="insert(10,20,2,'i78700k',100,100)"><img src="i7.jpg" height="50px" width="50px">I7
+                        8700k</li>
+                    <li onclick="insert(10,20,2,'i99900k',100,100)"><img src="i9.png" height="50px" width="50px">I9
+                        9900k</li>
                     <li id="a"><img src="AMD.png" height="30px" width="100%"></li>
-                    <li onclick="insert(10,20,2,'fx8350',100,100)"><img src="FX8370.jpg" height="50px" width="50px">FX 8370</li>
-                    <li onclick="insert(10,20,2,'R32200G',100,100)"><img src="R3.jpg" height="50px" width="50px">R3 2200g</li>
+                    <li onclick="insert(10,20,2,'fx8350',100,100)"><img src="FX8370.jpg" height="50px" width="50px">FX
+                        8370</li>
+                    <li onclick="insert(10,20,2,'R32200G',100,100)"><img src="R3.jpg" height="50px" width="50px">R3
+                        2200g</li>
                     <li onclick="insert(10,20,2,'R72700',100,100)"><img src="R7.jpg" height="50px" width="60px">R7 2700</li>
                 </ul>
             </nav>
@@ -221,7 +249,7 @@
                     <li id="a"><img src="asus_logo.png" height="30px" width="100%"></li>
                     <li onclick="insertmb('H310M-K')">PRIME H310M-K</li>
                     <li onclick="insertmb('PRIMEZ390-A')">PRIME Z390-A</li>
-                    <li onclick="insertmb('z87pro')">Z87s-PRO</li>
+                    <li onclick="insertmb('z87pro')">Z87-PRO</li>
                     <li onclick="insertmb('ROGSTRIXB350-FGAMING')">ROG STRIX B350-F GAMING</li>
                     <li onclick="insertmb('ROGSTRIXX470-FGAMING')">ROG STRIX X470-F GAMING</li>
                 </ul>
@@ -232,11 +260,11 @@
             <nav>SSD
                 <ul>
                     <li id="a"><img src="Samsung.png" height="40px" width="100%"> M.2 PCIE 2280</li>
-                    <li onclick="insert(150,750,2,'970EVONVMe1TB',75,225)">970 EVO NVMe 500G</li>
-                    <li onclick="insert(150,750,2,'970EVONVMe2TB',75,225)">970 EVO NVMe 1TB</li>
+                    <li onclick="insert(150,750,2,'970EVONVMe1TB',75,225)">970 EVO NVMe 1TB</li>
+                    <li onclick="insert(150,750,2,'970EVONVMe2TB',75,225)">970 EVO NVMe 2TB</li>
                     <li id="a"><img src="Kingston.png" height="40px" width="100%"></li>
-                    <li onclick="insert(150,750,2,'A1000480G',75,225)">UV500 480G/2.5" 7mm </li>
-                    <li onclick="insert(150,750,2,'UV500480G',75,225)">A400 480G/2.5" 7mm </li>
+                    <li onclick="insert(150,750,2,'UV500480G',75,225)">UV500 480G</li>
+                    <li onclick="insert(150,750,2,'A1000480G',75,225)">A1000 480G</li>
                 </ul>
             </nav>
         </div>
@@ -291,7 +319,7 @@
     </div>
     <div id="main">
         <div id="content">
-            <div class="plate" id="trash" ondrop="dropDel(event)" ondragover="allowDrop(event)" style="top:30px; left: 750px; z-index: 1; height: 100px; width: 100px;" >
+            <div class="plate" id="trash" ondrop="dropDel(event)" ondragover="allowDrop(event)" style="top:30px; left: 750px; z-index: 1; height: 100px; width: 100px;">
                 trash
             </div>
         </div>
@@ -306,7 +334,7 @@
             <button type="button" id="save"><img src="SAVE.png" style="width:40px;height:40px;"></button>
             <button type="button" id="fb"><img src="FB.png" style="width:40px;height:40px;"></button>
 
-            <nav id="list">LIST
+            <nav class="list">LIST
                 <ul>
                     <li></li>
                 </ul>
