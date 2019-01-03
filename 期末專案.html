@@ -217,6 +217,7 @@
     </style>
 </head>
 <script src="777.js"></script>
+<script src="http://connect.facebook.net/en_US/all.js" async=""></script>
 
 <body>
     <h1 style="background:url('textbackground.jpg');background-size:cover;width:300px;height:50px;">想玩自己組</h1>
@@ -332,8 +333,7 @@
         <div id="button">
             <button type="button" id="boot"><img src="BOOT.png" style="width:40px;height:40px;"></button>
             <button type="button" id="save"><img src="SAVE.png" style="width:40px;height:40px;"></button>
-            <button type="button" id="fb"><img src="FB.png" style="width:40px;height:40px;"></button>
-
+            <img src='FB.png' style='width:40px;height:40px;' id="shareBtn">
             <nav class="list">LIST
                 <ul>
                     <li></li>
@@ -343,5 +343,13 @@
     </div>
 
 </body>
-
+<script>
+    document.getElementById('shareBtn').onclick = function() {
+      FB.ui({
+        method: 'share',
+        display: 'popup',
+        href: 'https://developers.facebook.com/docs/',
+      }, function(response){});
+    }
+    </script>
 </html>
