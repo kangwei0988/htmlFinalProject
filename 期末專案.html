@@ -14,7 +14,7 @@
         @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
 
         h1 {
-            color: white;
+            color: burlywood;
             text-align: center;
             margin: auto;
         }
@@ -43,7 +43,7 @@
             color: white;
             border: 2px solid lightgray;
             text-align: center;
-            width: 10%;
+            width: 9%;
             box-sizing: border-box;
             z-index: 999;
         }
@@ -118,7 +118,7 @@
 
         #content {
             position: absolute;
-            width: 70%;
+            width: 63%;
             height: 600px;
             left: 50px;
             background-color: white;
@@ -132,21 +132,29 @@
 
         #explain {
             position: relative;
-            width: 25%;
+            width: 30%;
             height: 100%;
             float: right;
-            background-color: white;
         }
 
         #explain1 {
             position: relative;
-            height: 49%;
-            padding: 5px solid blue;
+            height: 48%;
+            border: 5px solid burlywood;
+            border-radius: 10px;
         }
-
+        #title{
+            position: relative;
+            height:4%;
+            text-align: center;
+            border-left:5px ridge burlywood;
+            border-right: 5px ridge burlywood;
+        }
         #explain2 {
-            height: 49%;
-            padding: 5px solid blue;
+            position: relative;
+            height: 48%;
+            border: 5px solid burlywood;
+            border-radius: 10px;
         }
 
         #main {
@@ -325,15 +333,16 @@
         </div>
         <div id="explain">
             <div id="explain1"></div>
+            <div id="title">123456</div>
             <div id="explain2"></div>
         </div>
     </div></br>
     <div id="footer">
         <div id="button">
             <button type="button" id="boot"><img src="BOOT.png" style="width:40px;height:40px;"></button>
-            <input type="text" id="tag" width="100px" height="100%" placeholder="在此輸入儲存Tag">
-            <button type="button" id="save" onclick="save()"><img src="SAVE.png" style="width:40px;height:40px;"></button>
             <button type="button" id="fb" ><img src='FB.png' style='width:40px;height:40px;' id="shareBtn"></button>
+            <button type="button" id="save" onclick="save()"><img src="SAVE.png" style="width:40px;height:40px;"></button>
+            <input type="text" id="tag" style="width:100px;" placeholder="儲存請按左邊">
             <nav class="list" >LIST
                 <ul id="saveList">
                 </ul>
