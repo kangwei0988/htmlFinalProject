@@ -26,8 +26,8 @@ function dropDel(ev) {
 }
 
 function whichType(c) {
-  if (c == "R72700" || c == "fx8350" || c == "i38100k" || c == "i52500k" || c == "i78700k" || c == "i99900k" || c == "R32200G") return 0;
-  if (c == "H310M-K" || c == "PRIMEZ390-A" || c == "ROGSTRIXB350-FGAMING" || c == "ROGSTRIXX470-FGAMING" || c == "z87pro") return 1;
+  if (c == "R72700" || c == "fx8350" || c == "i38100k" || c == "i74790k" || c == "i78700k" || c == "i99900k" || c == "R32200G") return 0;
+  if (c == "H310M-K" || c == "PRIMEZ390-A" || c == "ROGSTRIXB350-FGAMING" || c == "ROGSTRIXX470-FGAMING" || c == "B85pro") return 1;
   if (c == "970EVONVMe1TB" || c == "970EVONVMe2TB" || c == "A1000480G" || c == "UV500480G") return 2;
   if (c == "HDD") return 3;
   if (c == "1333" || c == "3000RGB" || c == "hyperx2400" || c == "3000") return 4;
@@ -81,13 +81,13 @@ function insertmb(pic) {
     plateCpuNode.setAttribute("style", "top:163px;left:412px;z-index:2;width:125px;height:125px;");
   }
   if (pic == "PRIMEZ390-A") {
-    plateCpuNode.setAttribute("style", "top:163px;left:412px;z-index:2;width:125px;height:125px;");
+    plateCpuNode.setAttribute("style", "top:150px;left:400px;z-index:2;width:85px;height:85px;");
   }
-  if (pic == "z87pro") {
+  if (pic == "B85pro") {
     plateCpuNode.setAttribute("style", "top:163px;left:412px;z-index:2;width:125px;height:125px;");
   }
   if (pic == "ROGSTRIXB350-FGAMING") {
-    plateCpuNode.setAttribute("style", "top:163px;left:412px;z-index:2;width:125px;height:125px;");
+    plateCpuNode.setAttribute("style", "top:158px;left:420px;z-index:2;width:85px;height:85px;");
   }
   if (pic == "ROGSTRIXX470-FGAMING") {
     plateCpuNode.setAttribute("style", "top:163px;left:412px;z-index:2;width:125px;height:125px;");
@@ -105,7 +105,7 @@ function insertmb(pic) {
   if (pic == "PRIMEZ390-A") {
     platePcieNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
   }
-  if (pic == "z87pro") {
+  if (pic == "B85pro") {
     platePcieNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
   }
   if (pic == "ROGSTRIXB350-FGAMING") {
@@ -127,7 +127,7 @@ function insertmb(pic) {
   if (pic == "PRIMEZ390-A") {
     plateVGANode.setAttribute("style", "top:355px;left:180px;z-index:2;width:425px;height:80px;");
   }
-  if (pic == "z87pro") {
+  if (pic == "B85pro") {
     plateVGANode.setAttribute("style", "top:355px;left:180px;z-index:2;width:425px;height:80px;");
   }
   if (pic == "ROGSTRIXB350-FGAMING") {
@@ -149,7 +149,7 @@ function insertmb(pic) {
   if (pic == "PRIMEZ390-A") {
     plateRAM1Node.setAttribute("style", "top:40px;left:623px;z-index:2;width:20px;height:368px;");
   }
-  if (pic == "z87pro") {
+  if (pic == "B85pro") {
     plateRAM1Node.setAttribute("style", "top:40px;left:623px;z-index:2;width:20px;height:368px;");
   }
   if (pic == "ROGSTRIXB350-FGAMING") {
@@ -171,7 +171,7 @@ function insertmb(pic) {
   if (pic == "PRIMEZ390-A") {
     plateRAM2Node.setAttribute("style", "top:40px;left:650px;z-index:2;width:20px;height:368px;");
   }
-  if (pic == "z87pro") {
+  if (pic == "B85pro") {
     plateRAM2Node.setAttribute("style", "top:40px;left:650px;z-index:2;width:20px;height:368px;");
   }
   if (pic == "ROGSTRIXB350-FGAMING") {
@@ -193,7 +193,7 @@ function insertmb(pic) {
   if (pic == "PRIMEZ390-A") {
     newNode.setAttribute("width", 500);
   }
-  if (pic == "z87pro") {
+  if (pic == "B85pro") {
     newNode.setAttribute("width", 600);
   }
   if (pic == "ROGSTRIXB350-FGAMING") {
