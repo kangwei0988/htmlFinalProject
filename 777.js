@@ -142,44 +142,46 @@ function insertmb(pic) {
   currentNode = document.getElementById("content");
   //CPU
   var plateCpuNode = document.createElement("div");
-  plateCpuNode.setAttribute("class", "MBPlateCpu");
+  plateCpuNode.setAttribute("class", "plate");
+  //MBPlateCpu
   plateCpuNode.setAttribute("id", pic + "CpuPlate");
   if (pic == "H310M-K") {
-    plateCpuNode.setAttribute("style", "top:163px;left:412px;z-index:2;width:125px;height:125px;");
+    plateCpuNode.setAttribute("style", "top:163px;left:447px;z-index:2;width:125px;height:125px;");
   }
   if (pic == "PRIMEZ390-A") {
-    plateCpuNode.setAttribute("style", "top:150px;left:400px;z-index:2;width:85px;height:85px;");
+    plateCpuNode.setAttribute("style", "top:143px;left:462px;z-index:2;width:97px;height:85px;");
   }
   if (pic == "b85pro") {
-    plateCpuNode.setAttribute("style", "top:163px;left:412px;z-index:2;width:125px;height:125px;");
+    plateCpuNode.setAttribute("style", "top:133px;left:440px;z-index:2;width:110px;height:90px;");
   }
   if (pic == "ROGSTRIXB350-FGAMING") {
-    plateCpuNode.setAttribute("style", "top:158px;left:420px;z-index:2;width:85px;height:85px;");
+    plateCpuNode.setAttribute("style", "top:150px;left:481px;z-index:2;width:96px;height:82px;");
   }
   if (pic == "ROGSTRIXX470-FGAMING") {
-    plateCpuNode.setAttribute("style", "top:163px;left:412px;z-index:2;width:125px;height:125px;");
+    plateCpuNode.setAttribute("style", "top:153px;left:475px;z-index:2;width:95px;height:80px;");
   }
   plateCpuNode.setAttribute("ondrop", "drop(event)");
   plateCpuNode.setAttribute("ondragover", "allowDrop(event)");
   currentNode.appendChild(plateCpuNode);
   //PCIE
   var platePcieNode = document.createElement("div");
-  platePcieNode.setAttribute("class", "MBPlatePcie");
+  platePcieNode.setAttribute("class", "plate");
+  //MBPlatePcie
   platePcieNode.setAttribute("id", pic + "PciePlate");
   if (pic == "H310M-K") {
-    platePcieNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
+    platePcieNode.setAttribute("style", "top:445px;left:420px;z-index:2;width:135px;height:25px;");
   }
   if (pic == "PRIMEZ390-A") {
-    platePcieNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
+    platePcieNode.setAttribute("style", "top:507px;left:445px;z-index:2;width:250px;height:30px;");
   }
   if (pic == "b85pro") {
     platePcieNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
   }
   if (pic == "ROGSTRIXB350-FGAMING") {
-    platePcieNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
+    platePcieNode.setAttribute("style", "top:300px;left:425px;z-index:2;width:145px;height:35px;");
   }
   if (pic == "ROGSTRIXX470-FGAMING") {
-    platePcieNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
+    platePcieNode.setAttribute("style", "top:505px;left:558px;z-index:2;width:135px;height:25px;");
   }
   platePcieNode.setAttribute("ondrop", "drop(event)");
   platePcieNode.setAttribute("ondragover", "allowDrop(event)");
@@ -189,7 +191,7 @@ function insertmb(pic) {
   plateVGANode.setAttribute("class", "MBPlateVga");
   plateVGANode.setAttribute("id", pic + "VgaPlate");
   if (pic == "H310M-K") {
-    plateVGANode.setAttribute("style", "top:355px;left:165px;z-index:2;width:425px;height:90px;");
+    plateVGANode.setAttribute("style", "top:370px;left:200px;z-index:2;width:425px;height:90px;");
   }
   if (pic == "PRIMEZ390-A") {
     plateVGANode.setAttribute("style", "top:355px;left:180px;z-index:2;width:425px;height:80px;");
@@ -302,7 +304,7 @@ if (pic != "H310M-K") {
     newNode.setAttribute("width", 600);
   }
   if (pic == "PRIMEZ390-A") {
-    newNode.setAttribute("width", 500);
+    newNode.setAttribute("width", 600);
   }
   if (pic == "b85pro") {
     newNode.setAttribute("width", 600);
@@ -315,7 +317,7 @@ if (pic != "H310M-K") {
   }
   newNode.setAttribute("height", 600);
   newNode.setAttribute("src", typeName[whichType(pic)] + "/" + pic + ".png");
-  newNode.setAttribute("style", "top:0px;left:150px;z-index:1;");
+  newNode.setAttribute("style", "top:0px;left:185px;z-index:1;");
   newNode.setAttribute("ondragstart", "drag(event)");
   newNode.draggable = true;
   currentNode.appendChild(newNode);
