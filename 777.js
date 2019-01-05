@@ -266,6 +266,7 @@ function show(tag){
     insert(250,750,2,obj.VGA,75,350)
   if(obj.POW!="none")
     insert(10,20,2,obj.CPU,100,100);
+  document.getElementById("tag").value = tag;
 }
 
 function save(){//第一次用json就上手
@@ -329,6 +330,7 @@ function save(){//第一次用json就上手
     newNode.appendChild(sbtn);
     newNode.appendChild(btn);
     currentNode.appendChild(newNode);
+    window.alert("成功儲存 tag:"+document.getElementById("tag").value)
 }
 
 function start(){
@@ -350,7 +352,6 @@ function start(){
     newNode.appendChild(sbtn);
     newNode.appendChild(btn);
     currentNode.appendChild(newNode);
-    
   }
   console.log("fuck");
 }
