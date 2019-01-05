@@ -4,6 +4,23 @@ var count = [0, 0, 0, 0, 0, 0, 0];
 //順序:cpu,mb,ssd,hdd,ram,vga,pow
 var typeName = ["CPU", "MB", "SSD", "傳統硬碟", "RAM", "VGA", "電源供應器"];
 
+window.fbAsyncInit = function() {
+  FB.init({
+    appId            : '190381168487019',
+    autoLogAppEvents : true,
+    xfbml            : true,
+    version          : 'v3.2'
+  });
+};
+
+(function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "https://connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
+
 function allowDrop(ev) {
   ev.preventDefault();
 }
@@ -213,6 +230,8 @@ function insertmb(pic) {
   localStorage.setItem(idcount+"-y", document.getElementById( "y" ).value);
   localStorage.setItem("idcount", idcount);*/
 }
+
+
 
 function save(){//第一次用json就上手
   for(var i=0;i<localStorage.length;i++)
