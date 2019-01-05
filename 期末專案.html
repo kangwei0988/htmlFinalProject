@@ -14,6 +14,8 @@
         @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
 
         h1 {
+            position: absolute;
+            left:850px;
             color: burlywood;
             text-align: center;
             margin: auto;
@@ -25,15 +27,8 @@
             font-size: 24px;
             font-weight: bold;
             background-repeat: no-repeat;
-            background-size: cover;
             margin: 0;
             padding: 0;
-            height: 100%;
-        }
-
-        iframe {
-            width: 100%;
-            height: 400px;
         }
 
         #header nav {
@@ -44,21 +39,21 @@
             color: white;
             border: 2px solid lightgray;
             text-align: center;
-            width: 9%;
+            width: 171px;
             box-sizing: border-box;
             z-index: 999;
         }
 
         #footer nav {
-            bottom:0px;
-            position: fixed;
+            bottom:10px;
+            position: absolute;
             font-weight: bold;
             color: white;
             border: 2px solid lightgray;
             text-align: center;
-            width: 15%;
+            width: 250px;
             box-sizing: border-box;
-            right:0px;
+            left:1650px;
             border-radius: 5px;
         }
 
@@ -103,23 +98,24 @@
         #a nav ul li:hover {
             color: white;
         }
-
+        /*
         @media only screen and (max-width: 600px) {
             nav {
                 float: none;
                 width: 100%;
                 height: 500px;
             }
-        }
+        }*/
 
         #header {
+            top:50px;
             height: 100px;
             left: 50px;
         }
 
         #content {
             position: absolute;
-            width: 63%;
+            width: 1200px;
             height: 600px;
             left: 50px;
             background-color: white;
@@ -132,22 +128,22 @@
         }
 
         #explain {
-            right:2%;
-            position: relative;
-            width: 30%;
+            left:1300px;
+            position: absolute;
+            width: 600px;
             height: 100%;
             float: right;
         }
 
         #explain1 {
             position: relative;
-            height: 48%;
+            height: 35%;
             border: 5px solid burlywood;
             border-radius: 10px;
         }
         #title{
             position: relative;
-            height:4%;
+            height:2%;
             text-align: center;
             font-size: 45px;
         }
@@ -169,7 +165,6 @@
             height: 70px;
             position: absolute;
             bottom: 0px;
-
         }
 
         #boot,
@@ -232,7 +227,7 @@
 
 
 <body onload="start()">
-    <h1 style="background:url('textbackground.jpg');background-size:cover;width:300px;height:50px;">想玩自己組</h1>
+    <h1 style="background:url('textbackground.jpg');background-size:cover;width:300px;height:50px;">想玩自己組</h1><br><br><br>
     <div id="header">
         <div>
             <nav>CPU

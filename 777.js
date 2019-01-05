@@ -597,7 +597,6 @@ function boost(){
           alert("記憶體槽插錯了!");
           return;
         }
-        else if()
       nodeList=document.getElementById(mb+"Ram2Plate").childNodes;
       if(document.getElementById(mb+"Ram2Plate").hasChildNodes())
         if(whichType(nodeList[0].id)!=4){
