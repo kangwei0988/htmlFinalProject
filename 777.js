@@ -81,6 +81,11 @@ function whichType(c) {
   if(c.search("1333")!=null && c.search("3000")!=null && c.search("3000RGB") && c.search("hyperx2400")!=null) return 4;
 }
 
+function whichLag(c){
+  if (c == "R72700" || c == "R32200G") return "am4";
+  
+}
+
 function insert(x, y, z, pic, h, w) {
   if (count[whichType(pic)] > 0 && whichType(pic) != 4) {
     alert("已經有" + typeName[whichType(pic)] + "了！！不能貪心歐＜３");
@@ -645,17 +650,17 @@ function boost(){
         }
     }
   }
-  if(!document.getElementById(mb+"PciePlate").hasChildNodes()&&!document.getElementById(mb+"PciePlate").hasChildNodes()){//有無開機碟
+  if(!document.getElementById(mb+"PciePlate").hasChildNodes()&&!document.getElementById(mb+"HddPlate").hasChildNodes()){//有無開機碟
     boom();
     alert("沒有開機碟!");
     return;
   }
   else{//有開機碟
-    nodeList=document.getElementById(mb+"PciePlate").childNodes;
-    if(document.getElementById(mb+"PciePlate").hasChildNodes())
-      if(whichType(nodeList[0].id)!=2){
+    nodeList=document.getElementById(mb+"HddPlate").childNodes;
+    if(document.getElementById(mb+"HddPlate").hasChildNodes())
+      if(whichType(nodeList[0].id)!=3){
         boom();
-        alert("PCIE槽插錯了!");
+        alert("SATA3槽插錯了!");
         return;
       }
     nodeList=document.getElementById(mb+"PciePlate").childNodes;
@@ -666,8 +671,36 @@ function boost(){
         return;
       }
   }
+  if(!document.getElementById(mb+"PowPlate").hasChildNodes()){//有無電源
+    boom();
+    alert("沒有電源!");
+    return;
+  }
+  else{
+    nodeList=document.getElementById(mb+"PowPlate").childNodes;
+      if(whichType(nodeList[0].id)!=6){
+        boom();
+        alert("24pin槽插錯了!");
+        return;
+      }
+  }
+  if(!document.getElementById(mb+"VgaPlate").hasChildNodes()){//有無顯卡
+    var x = document.getElementById(mb+"CpuPlate").childNodes;
+    if(x=="R72700"){
+      boom();
+      alert("2700無內顯，需搭配獨立顯卡\n沒有顯示晶片!");
+      return;
+    }
+  }
+  else{
+    nodeList=document.getElementById(mb+"VgaPlate").childNodes;
+      if(whichType(nodeList[0].id)!=5){
+        boom();
+        alert("PCI槽插錯了!");
+        return;
+      }
+  }
   
-
 }//成功啟動  順序:cpu,mb,ssd,hdd,ram,vga,pow
 
 function mouseOver( e )
