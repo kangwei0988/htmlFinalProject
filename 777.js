@@ -78,7 +78,7 @@ function whichType(c) {
   if (c == "1333" || c == "3000RGB" || c == "hyperx2400" || c == "3000") return 4;
   if (c == "GTX1066" || c == "GTX1080TI" || c == "RTX2070" || c == "RTX2080TI") return 5;
   if (c == "pow") return 6;
-  if(c.search("1333")!=null && c.search("3000")!=null && c.search("3000RGB") && c.search("hyperx2400")!=null) return 4;
+  if(c.search("1333")!=-1 || c.search("3000")!=-1 || c.search("3000RGB")!=-1 || c.search("hyperx2400")!=-1) return 4;
 }
 
 function whichLag(c){
@@ -87,6 +87,13 @@ function whichLag(c){
   if (c == "H310M-K" || c == "PRIMEZ390-A") return 1151;
   if (c == "ROGSTRIXB350-FGAMING" || c == "ROGSTRIXX470-FGAMING") return "am4";
   if (c == "b85pro" || c == "i74790k") return 1150;
+}
+
+function whichDdr(c){
+  if (c == "i74790k" || c.search("1333")!=-1) 
+    return "DDR3";
+  else
+    return "DDR4";
 }
 
 function insert(x, y, z, pic, h, w) {
@@ -559,7 +566,6 @@ function boost(){
   var x = document.getElementById("content").childNodes;
   var mb ="";
   for(var i=0;i<x.length;i++){
-    console.log(mb);
     if(whichType(x[i].id)==1){
       mb=x[i].id;
     } 
@@ -584,6 +590,7 @@ function boost(){
     }
   }
   if(mb=="H310M-K"){//唯一ram插槽2個
+    console.log(mb);
     if(!(document.getElementById(mb+"Ram1Plate").hasChildNodes()||document.getElementById(mb+"Ram2Plate").hasChildNodes())){//有無記憶體
       boom();
       alert("沒有記憶體!");
@@ -591,19 +598,33 @@ function boost(){
     }
     else{//有無插錯
       nodeList=document.getElementById(mb+"Ram1Plate").childNodes;
-      if(document.getElementById(mb+"Ram1Plate").hasChildNodes())
+      console.log(whichDdr("1333"));
+      console.log(whichDdr("i38100k"));
+      if(document.getElementById(mb+"Ram1Plate").hasChildNodes()){
         if(whichType(nodeList[0].id)!=4){
           boom();
           alert("記憶體槽插錯了!");
           return;
         }
+        else if(whichDdr(document.getElementById(mb+"CpuPlate").childNodes[0].id)!=whichDdr(nodeList[0].id)){
+          boom();
+          alert("CPU不支援"+whichDdr(nodeList[0].id));
+          return;
+        }
+      }
       nodeList=document.getElementById(mb+"Ram2Plate").childNodes;
-      if(document.getElementById(mb+"Ram2Plate").hasChildNodes())
+      if(document.getElementById(mb+"Ram2Plate").hasChildNodes()){
         if(whichType(nodeList[0].id)!=4){
           boom();
           alert("記憶體槽插錯了!");
           return;
         }
+        else if(whichDdr(document.getElementById(mb+"CpuPlate").childNodes[0].id)!=whichDdr(nodeList[0].id)){
+          boom();
+          alert("CPU不支援"+whichDdr(nodeList[0].id));
+          return;
+        }
+      }
     }
   }
   else{//其他主板
@@ -614,33 +635,57 @@ function boost(){
     }
     else{//有無插錯
       nodeList=document.getElementById(mb+"Ram1Plate").childNodes;
-      if(document.getElementById(mb+"Ram1Plate").hasChildNodes())
+      if(document.getElementById(mb+"Ram1Plate").hasChildNodes()){
         if(whichType(nodeList[0].id)!=4){
           boom();
           alert("記憶體槽插錯了!");
           return;
         }
+        else if(whichDdr(document.getElementById(mb+"CpuPlate").childNodes[0].id)!=whichDdr(nodeList[0].id)){
+          boom();
+          alert("CPU不支援"+whichDdr(nodeList[0].id));
+          return;
+        }
+      }
       nodeList=document.getElementById(mb+"Ram2Plate").childNodes;
-      if(document.getElementById(mb+"Ram2Plate").hasChildNodes())
+      if(document.getElementById(mb+"Ram2Plate").hasChildNodes()){
         if(whichType(nodeList[0].id)!=4){
           boom();
           alert("記憶體槽插錯了!");
           return;
         }
+        else if(whichDdr(document.getElementById(mb+"CpuPlate").childNodes[0].id)!=whichDdr(nodeList[0].id)){
+          boom();
+          alert("CPU不支援"+whichDdr(nodeList[0].id));
+          return;
+        }
+      }
       nodeList=document.getElementById(mb+"Ram3Plate").childNodes;
-      if(document.getElementById(mb+"Ram3Plate").hasChildNodes())
+      if(document.getElementById(mb+"Ram3Plate").hasChildNodes()){
         if(whichType(nodeList[0].id)!=4){
           boom();
           alert("記憶體槽插錯了!");
           return;
         }
+        else if(whichDdr(document.getElementById(mb+"CpuPlate").childNodes[0].id)!=whichDdr(nodeList[0].id)){
+          boom();
+          alert("CPU不支援"+whichDdr(nodeList[0].id));
+          return;
+        }
+      }
       nodeList=document.getElementById(mb+"Ram4Plate").childNodes;
-      if(document.getElementById(mb+"Ram2Plate").hasChildNodes())
+      if(document.getElementById(mb+"Ram4Plate").hasChildNodes()){
         if(whichType(nodeList[0].id)!=4){
           boom();
           alert("記憶體槽插錯了!");
           return;
         }
+        else if(whichDdr(document.getElementById(mb+"CpuPlate").childNodes[0].id)!=whichDdr(nodeList[0].id)){
+          boom();
+          alert("CPU不支援"+whichDdr(nodeList[0].id));
+          return;
+        }
+      }
     }
   }
   if(!document.getElementById(mb+"PciePlate").hasChildNodes()/*&&!document.getElementById(mb+"HddPlate").hasChildNodes()*/){//有無開機碟
