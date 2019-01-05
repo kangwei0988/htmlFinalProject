@@ -31,6 +31,8 @@ function drop(ev) {
   ev.preventDefault();
   if (ev.target.tagName.toLowerCase() == "img")//防止圖片塞在圖片內
     return;
+  if(whichType[ev.target.id]==1)//防止mb亂動
+    return;
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
 }
@@ -231,6 +233,61 @@ function insertmb(pic) {
   localStorage.setItem("idcount", idcount);*/
 }
 
+function check(){
+  var x = document.getElementById("content").childNodes;
+  var ramCount = 1;
+  var obj={CPU:'none', MB:'none', SSD:'none', HDD:'none', RAM1:'none', RAM2:'none', RAM3:'none', RAM4:'none',  VGA:'none', POW:'none'};
+  for(var i=0;i<x.length;i++){
+      if(x[i].nodeName=="IMG" && x[i].id!="trash")
+        obj.MB=x[i].id;
+      else if(x[i].nodeName=="DIV"){
+        if(x[i].hasChildNodes){
+          var t = x[i].childNodes;
+          for(var j=0;j<t.length;j++){
+            if(t[j].nodeName=="IMG"){//順序:cpu,mb,ssd,hdd,ram,vga,pow
+              if(whichType(t[j].id)==0)
+                  obj.CPU=t[j].id;
+              if(whichType(t[j].id)==2)
+                obj.SSD=t[j].id;
+              if(whichType(t[j].id)==3)
+                obj.HDD=t[j].id;
+              if(whichType(t[j].id)==4){
+                if(ramCount==1)
+                  obj.RAM1=t[j].id;
+                else if(ramCount==2)
+                  obj.RAM2=t[j].id;
+                else if(ramCount==3)
+                  obj.RAM3=t[j].id;
+                else if(ramCount==4)
+                  obj.RAM4=t[j].id;
+                ramCount++;
+              }
+              if(whichType(t[j].id)==5)
+                obj.VGA=t[j].id;
+              if(whichType(t[j].id)==6)
+                obj.POW=t[j].id;
+            }
+          }
+        }
+      }
+  }//end load
+  var text = "";
+  text+="處理器: "+obj.CPU+"<br>";
+  text+="主機板: "+obj.MB+"<br>";
+  text+="固態硬碟: "+obj.SSD+"<br>";
+  text+="機械硬碟: "+obj.HDD+"<br>";
+  text+="記憶體: "+obj.RAM1;
+  if(ramCount>1)
+    text+="   "+obj.RAM2;
+  if(ramCount>2)
+    text+="   "+obj.RAM3;
+  if(ramCount>3)
+    text+="   "+obj.RAM4;
+  text+="<br>獨立顯示卡: "+obj.VGA+"<br>";
+  text+="電源供應器: "+obj.POW+"<br>";
+  document.getElementById("explain2").innerHTML=text;
+}
+
 function deltag( tar ){
     localStorage.removeItem(tar);
     document.getElementById("savetag:"+tar).remove();
@@ -279,7 +336,7 @@ function save(){//第一次用json就上手
     var ramCount = 1;
     var obj={CPU:'none', MB:'none', SSD:'none', HDD:'none', RAM1:'none', RAM2:'none', RAM3:'none', RAM4:'none',  VGA:'none', POW:'none'};
     for(var i=0;i<x.length;i++){
-        if(x[i].nodeName=="IMG")
+        if(x[i].nodeName=="IMG" && x[i].id!="trash")
           obj.MB=x[i].id;
         else if(x[i].nodeName=="DIV"){
           if(x[i].hasChildNodes){
@@ -334,6 +391,7 @@ function save(){//第一次用json就上手
 }
 
 function start(){
+  setInterval("check()",300);
   currentNode = document.getElementById("saveList");
   for(var i=0;i<localStorage.length;i++){
     var btn = document.createElement("button");
