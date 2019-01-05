@@ -81,6 +81,11 @@ function whichType(c) {
   if(c.search("1333")!=null && c.search("3000")!=null && c.search("3000RGB") && c.search("hyperx2400")!=null) return 4;
 }
 
+function whichLag(c){
+  if (c == "R72700" || c == "R32200G") return "am4";
+  
+}
+
 function insert(x, y, z, pic, h, w) {
   if (count[whichType(pic)] > 0 && whichType(pic) != 4) {
     alert("已經有" + typeName[whichType(pic)] + "了！！不能貪心歐＜３");
