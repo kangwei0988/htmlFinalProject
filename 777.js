@@ -255,7 +255,7 @@ function show(tag){
   if(obj.HDD!="none")
     insert(10,20,2,obj.HDD,100,100);
   if(obj.RAM1!="none")
-    insert(150,750,2,obj.RAM1,75,225)
+    insert(175,20,2,obj.RAM1,400,40);
   if(obj.RAM2!="none")
     insert(10,20,2,obj.CPU,100,100);
   if(obj.RAM3!="none")
