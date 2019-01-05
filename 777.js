@@ -188,10 +188,11 @@ function insertmb(pic) {
   currentNode.appendChild(platePcieNode);
   //VGA
   var plateVGANode = document.createElement("div");
-  plateVGANode.setAttribute("class", "MBPlateVga");
+  plateVGANode.setAttribute("class", "plate");
+  //MBPlateVga
   plateVGANode.setAttribute("id", pic + "VgaPlate");
   if (pic == "H310M-K") {
-    plateVGANode.setAttribute("style", "top:370px;left:200px;z-index:2;width:425px;height:90px;");
+    plateVGANode.setAttribute("style", "top:350px;left:215px;z-index:2;width:420px;height:90px;");
   }
   if (pic == "PRIMEZ390-A") {
     plateVGANode.setAttribute("style", "top:355px;left:180px;z-index:2;width:425px;height:80px;");
