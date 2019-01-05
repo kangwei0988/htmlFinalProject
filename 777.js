@@ -241,7 +241,7 @@ function show(tag){
   var x = document.getElementById("content").childNodes;
   for(var i=x.length-1;i>=0;i--){
     if(x[i].id!="trash")  
-    x[i].remove();
+      x[i].remove();
   }
   for(var i=0;i<7;i++){
     count[i]=0;
@@ -315,7 +315,21 @@ function save(){//第一次用json就上手
     currentNode = document.getElementById("saveList");
     var newNode = document.createElement("li");
     newNode.setAttribute("id", "savetag:"+document.getElementById("tag").value);
-    newNode.setAttribute("onclick", "show(document.getElementById('tag').value)");
+    newNode.setAttribute("onclick", "show('"+document.getElementById('tag').value+"')");
     newNode.innerHTML = document.getElementById("tag").value;
     currentNode.appendChild(newNode);
 }
+
+function start(){
+  currentNode = document.getElementById("saveList");
+  for(var i=0;i<localStorage.length;i++){
+    var newNode = document.createElement("li");
+    newNode.setAttribute("id", "savetag:"+localStorage.key(i));
+    newNode.setAttribute("onclick", "show('"+localStorage.key(i)+"')");
+    newNode.innerHTML = localStorage.key(i);
+    currentNode.appendChild(newNode);
+    console.log("fuck");
+  }
+}
+
+window.addEventListener("load",start,false);
