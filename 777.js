@@ -70,7 +70,7 @@ function dropDel(ev) {
 }
 
 function whichType(c) {
-  if(!c) return 10;
+  if(!c) return -1;
   if (c == "R72700" || c == "fx8350" || c == "i38100k" || c == "i74790k" || c == "i78700k" || c == "i99900k" || c == "R32200G") return 0;
   if (c == "H310M-K" || c == "PRIMEZ390-A" || c == "ROGSTRIXB350-FGAMING" || c == "ROGSTRIXX470-FGAMING" || c == "b85pro") return 1;
   if (c == "970EVONVMe1TB" || c == "970EVONVMe2TB" || c == "A1000480G" || c == "UV500480G") return 2;
@@ -206,7 +206,7 @@ function insertmb(pic) {
   plateVGANode.setAttribute("ondrop", "drop(event)");
   plateVGANode.setAttribute("ondragover", "allowDrop(event)");
   currentNode.appendChild(plateVGANode);
-  //RAM
+  //RAM1
   var plateRAM1Node = document.createElement("div");
   plateRAM1Node.setAttribute("class", "MBPlateRam");
   plateRAM1Node.setAttribute("id", pic + "Ram1Plate");
@@ -228,7 +228,7 @@ function insertmb(pic) {
   plateRAM1Node.setAttribute("ondrop", "drop(event)");
   plateRAM1Node.setAttribute("ondragover", "allowDrop(event)");
   currentNode.appendChild(plateRAM1Node);
-  //RAM
+  //RAM2
   var plateRAM2Node = document.createElement("div");
   plateRAM2Node.setAttribute("class", "MBPlateRam");
   plateRAM2Node.setAttribute("id", pic + "Ram2Plate");
@@ -250,6 +250,50 @@ function insertmb(pic) {
   plateRAM2Node.setAttribute("ondrop", "drop(event)");
   plateRAM2Node.setAttribute("ondragover", "allowDrop(event)");
   currentNode.appendChild(plateRAM2Node);
+  //RAM3
+if (pic != "H310M-K") {
+  var plateRAM3Node = document.createElement("div");
+  plateRAM3Node.setAttribute("class", "MBPlateRam");
+  plateRAM3Node.setAttribute("id", pic + "Ram3Plate");
+
+  if (pic == "PRIMEZ390-A") {
+    plateRAM3Node.setAttribute("style", "top:40px;left:650px;z-index:2;width:20px;height:368px;");
+  }
+  if (pic == "b85pro") {
+    plateRAM3Node.setAttribute("style", "top:40px;left:650px;z-index:2;width:20px;height:368px;");
+  }
+  if (pic == "ROGSTRIXB350-FGAMING") {
+    plateRAM3Node.setAttribute("style", "top:40px;left:650px;z-index:2;width:20px;height:368px;");
+  }
+  if (pic == "ROGSTRIXX470-FGAMING") {
+    plateRAM3Node.setAttribute("style", "top:40px;left:650px;z-index:2;width:20px;height:368px;");
+  }
+  plateRAM3Node.setAttribute("ondrop", "drop(event)");
+  plateRAM3Node.setAttribute("ondragover", "allowDrop(event)");
+  currentNode.appendChild(plateRAM3Node);
+}
+  //RAM4
+if (pic != "H310M-K") {
+  var plateRAM4Node = document.createElement("div");
+  plateRAM4Node.setAttribute("class", "MBPlateRam");
+  plateRAM4Node.setAttribute("id", pic + "Ram4Plate");
+
+  if (pic == "PRIMEZ390-A") {
+    plateRAM4Node.setAttribute("style", "top:40px;left:650px;z-index:2;width:20px;height:368px;");
+  }
+  if (pic == "b85pro") {
+    plateRAM4Node.setAttribute("style", "top:40px;left:650px;z-index:2;width:20px;height:368px;");
+  }
+  if (pic == "ROGSTRIXB350-FGAMING") {
+    plateRAM4Node.setAttribute("style", "top:40px;left:650px;z-index:2;width:20px;height:368px;");
+  }
+  if (pic == "ROGSTRIXX470-FGAMING") {
+    plateRAM4Node.setAttribute("style", "top:40px;left:650px;z-index:2;width:20px;height:368px;");
+  }
+  plateRAM4Node.setAttribute("ondrop", "drop(event)");
+  plateRAM4Node.setAttribute("ondragover", "allowDrop(event)");
+  currentNode.appendChild(plateRAM4Node);
+}
   //MBpic
   var newNode = document.createElement("img");
   newNode.setAttribute("id", pic);
@@ -496,7 +540,28 @@ function boost(){
       return;
     }
   }
-
+  if(mb=="H310M-K"){//唯一ram插槽2個
+    if(!(document.getElementById(mb+"Ram1Plate").hasChildNodes||document.getElementById(mb+"Ram2Plate").hasChildNodes)){
+      boom();
+      alert("沒有記憶體!");
+      return;
+    }
+    else{
+      nodeList=document.getElementById(mb+"Ram1Plate").childNodes;
+      if(whichType(nodeList[0].id)!=1){
+        boom();
+        alert("記憶體槽插錯了!");
+        return;
+      }
+      nodeList=document.getElementById(mb+"Ram2Plate").childNodes;
+      if(whichType(nodeList[0].id)!=1){
+        boom();
+        alert("記憶體槽插錯了!");
+        return;
+      }
+    }
+  }
+  
 }
 
 function mouseOver( e )
