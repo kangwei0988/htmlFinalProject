@@ -231,9 +231,9 @@ function insertmb(pic) {
   localStorage.setItem("idcount", idcount);*/
 }
 
-function del(){
-  localStorage.removeItem(this.innerHTML);
-  this.remove();
+function deltag( tar ){
+    localStorage.removeItem(tar);
+    document.getElementById("savetag:"+tar).remove();
 }
 
 function show(tag){
@@ -313,23 +313,44 @@ function save(){//第一次用json就上手
     }
     localStorage.setItem(document.getElementById("tag").value,JSON.stringify(obj));
     currentNode = document.getElementById("saveList");
+    var btn = document.createElement("button");
+    btn.innerHTML="刪除";
+    btn.setAttribute("type", "button");
+    btn.setAttribute("style", "width:40px;height:20px;");
+    btn.setAttribute("onclick", "deltag('"+document.getElementById("tag").value+"')");
+    var sbtn = document.createElement("button");
+    sbtn.setAttribute("onclick", "show('"+document.getElementById('tag').value+"')");
+    sbtn.innerHTML="讀取";
+    sbtn.setAttribute("type", "button");
+    sbtn.setAttribute("style", "width:40px;height:20px;");
     var newNode = document.createElement("li");
     newNode.setAttribute("id", "savetag:"+document.getElementById("tag").value);
-    newNode.setAttribute("onclick", "show('"+document.getElementById('tag').value+"')");
     newNode.innerHTML = document.getElementById("tag").value;
+    newNode.appendChild(sbtn);
+    newNode.appendChild(btn);
     currentNode.appendChild(newNode);
 }
 
 function start(){
   currentNode = document.getElementById("saveList");
   for(var i=0;i<localStorage.length;i++){
+    var btn = document.createElement("button");
+    btn.innerHTML="刪除";
+    btn.setAttribute("type", "button");
+    btn.setAttribute("style", "width:40px;height:20px;");
+    btn.setAttribute("onclick", "deltag('"+localStorage.key(i)+"')");
+    var sbtn = document.createElement("button");
+    sbtn.setAttribute("onclick", "show('"+localStorage.key(i)+"')");
+    sbtn.innerHTML="讀取";
+    sbtn.setAttribute("type", "button");
+    sbtn.setAttribute("style", "width:40px;height:20px;");
     var newNode = document.createElement("li");
     newNode.setAttribute("id", "savetag:"+localStorage.key(i));
-    newNode.setAttribute("onclick", "show('"+localStorage.key(i)+"')");
     newNode.innerHTML = localStorage.key(i);
+    newNode.appendChild(sbtn);
+    newNode.appendChild(btn);
     currentNode.appendChild(newNode);
-    console.log("fuck");
+    
   }
+  console.log("fuck");
 }
-
-window.addEventListener("load",start,false);
