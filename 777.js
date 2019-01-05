@@ -2,6 +2,7 @@ var idcount = 0;
 var currentNode;
 var count = [0, 0, 0, 0, 0, 0, 0];
 var ramPosition=[0,0,0,0];
+var vidplay=1;
 //順序:cpu,mb,ssd,hdd,ram,vga,pow
 var typeName = ["CPU", "MB", "SSD", "HDD", "RAM", "VGA", "POW"];
 
@@ -491,7 +492,7 @@ function show(tag){
   var obj = JSON.parse(localStorage.getItem(tag))
   var x = document.getElementById("content").childNodes;
   for(var i=x.length-1;i>=0;i--){
-    if(x[i].id!="trash")  
+    if(x[i].id!="trash" && x[i].id!="myVideo")  
       x[i].remove();
   }
   for(var i=0;i<7;i++){
@@ -588,6 +589,7 @@ function save(){//第一次用json就上手
 
 function start(){
   setInterval("check()",300);
+  //document.getElementById("myvid").hidden=true;
   currentNode = document.getElementById("saveList");
   for(var i=0;i<localStorage.length;i++){
     var btn = document.createElement("button");
@@ -607,7 +609,7 @@ function start(){
     newNode.appendChild(btn);
     currentNode.appendChild(newNode);
   }
-  console.log("fuck");
+
 }
 
 function boom(){
@@ -615,13 +617,14 @@ function boom(){
     var newNode = document.createElement("img");
     newNode.setAttribute("src","69082.gif");
     newNode.setAttribute("id","boom");
-    newNode.setAttribute("style","z-index:10");
+    /*newNode.setAttribute("style","z-index:10");
     newNode.setAttribute("width","100%");
-    newNode.setAttribute("height","100%");
+    newNode.setAttribute("height","100%");*/
     currentNode.appendChild(newNode);
 }
 
 function boost(){
+  if(vidplay==0) return;//防止重複撥放
   //確認各零件
   var nodeList;
   var x = document.getElementById("content").childNodes;
@@ -791,7 +794,14 @@ function boost(){
     setTimeout(function(){ document.getElementById("boom").remove(); alert("cpu和主機板的腳位不合!!"); }, 3000);
     return;
   }
-  alert("組裝電腦大成功!\n大吉大利，今晚早點睡，幹你娘累暴");
+  var vid = document.getElementById("myVideo");
+  //vid.hidden=false;
+  vidplay=0;
+  vid.hidden=false;
+  vid.volume = 0.1;
+  vid.play();
+  setTimeout(function(){ alert("組裝電腦大成功!\n大吉大利，今晚早點睡，幹你娘累暴"); vid.hidden=true; vidplay=1;}, 10000);
+  
 }//成功啟動  順序:cpu,mb,ssd,hdd,ram,vga,pow
 
 function mouseOver( e )
