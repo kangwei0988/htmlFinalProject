@@ -231,7 +231,42 @@ function insertmb(pic) {
   localStorage.setItem("idcount", idcount);*/
 }
 
+function del(){
+  localStorage.removeItem(this.innerHTML);
+  this.remove();
+}
 
+function show(tag){
+  var obj = JSON.parse(localStorage.getItem(tag))
+  var x = document.getElementById("content").childNodes;
+  for(var i=x.length-1;i>=0;i--){
+    if(x[i].id!="trash")  
+    x[i].remove();
+  }
+  for(var i=0;i<7;i++){
+    count[i]=0;
+  }
+  if(obj.CPU!="none")
+    insert(10,20,2,obj.CPU,100,100);
+  if(obj.MB!="none")
+    insertmb(obj.MB);
+  if(obj.SSD!="none")
+    insert(150,750,2,obj.SSD,75,225)
+  if(obj.HDD!="none")
+    insert(10,20,2,obj.HDD,100,100);
+  if(obj.RAM1!="none")
+    insert(150,750,2,obj.RAM1,75,225)
+  if(obj.RAM2!="none")
+    insert(10,20,2,obj.CPU,100,100);
+  if(obj.RAM3!="none")
+    insert(10,20,2,obj.CPU,100,100);
+  if(obj.RAM4!="none")
+    insert(10,20,2,obj.CPU,100,100);
+  if(obj.VGA!="none")
+    insert(250,750,2,obj.VGA,75,350)
+  if(obj.POW!="none")
+    insert(10,20,2,obj.CPU,100,100);
+}
 
 function save(){//第一次用json就上手
   for(var i=0;i<localStorage.length;i++)
@@ -277,4 +312,10 @@ function save(){//第一次用json就上手
         }
     }
     localStorage.setItem(document.getElementById("tag").value,JSON.stringify(obj));
+    currentNode = document.getElementById("saveList");
+    var newNode = document.createElement("li");
+    newNode.setAttribute("id", "savetag:"+document.getElementById("tag").value);
+    newNode.setAttribute("onclick", "show(document.getElementById('tag').value)");
+    newNode.innerHTML = document.getElementById("tag").value;
+    currentNode.appendChild(newNode);
 }

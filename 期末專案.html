@@ -83,7 +83,7 @@
         }
 
         #footer nav ul li {
-            top: -90px;
+            /*top: -90px;*/
             position: relative;
             background-color: black;
             border: 2px solid lightgray;
@@ -337,9 +337,8 @@
             <input type="text" id="tag" width="100px" height="100%">
             <button type="button" id="save" onclick="save()"><img src="SAVE.png" style="width:40px;height:40px;"></button>
             <button type="button" id="fb" ><img src='FB.png' style='width:40px;height:40px;' id="shareBtn"></button>
-            <nav class="list">LIST
-                <ul>
-                    <li></li>
+            <nav class="list" >LIST
+                <ul id="saveList">
                 </ul>
             </nav>
         </div>
@@ -347,24 +346,6 @@
 
 </body>
 <script src="777.js"></script>
-<!--<script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId            : '190381168487019',
-        autoLogAppEvents : true,
-        xfbml            : true,
-        version          : 'v3.2'
-      });
-    };
-  
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>-->
 <script>
     document.getElementById('shareBtn').onclick = function() {
       FB.ui({
