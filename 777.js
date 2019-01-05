@@ -1,6 +1,7 @@
 var idcount = 0;
 var currentNode;
 var count = [0, 0, 0, 0, 0, 0, 0];
+var ramPosition=[0,0,0,0];
 //順序:cpu,mb,ssd,hdd,ram,vga,pow
 var typeName = ["CPU", "MB", "SSD", "傳統硬碟", "RAM", "VGA", "電源供應器"];
 
@@ -49,9 +50,17 @@ function dropDel(ev) {
       }
       for(var i = 0;i<7;i++)
         count[i]=0;
+        for(var i=0;i<4;i++)
+        ramPosition[i]=0;
     }
     else
       return;
+  }
+  else if(whichType(data)==4){
+    document.getElementById(data).remove();
+    document.getElementById(data + "Plate").remove();
+    ramPosition[parseInt(data.charAt(0))]=0;
+    count[whichType(data)]--;
   }
   else{
     document.getElementById(data).remove();
@@ -68,6 +77,7 @@ function whichType(c) {
   if (c == "1333" || c == "3000RGB" || c == "hyperx2400" || c == "3000") return 4;
   if (c == "GTX1066" || c == "GTX1080TI" || c == "RTX2070" || c == "RTX2080TI") return 5;
   if (c == "pow") return 6;
+  if(c.search("1333")!=null && c.search("3000")!=null && c.search("3000RGB") && c.search("hyperx2400")!=null) return 4;
 }
 
 function insert(x, y, z, pic, h, w) {
@@ -75,17 +85,43 @@ function insert(x, y, z, pic, h, w) {
     alert("已經有" + typeName[whichType(pic)] + "了！！不能貪心歐＜３");
     return;
   }
+  
+  if(whichType(pic)==4){
+    var plus=0;
+    var i;
+    if(count[whichType(pic)] > 3){
+      alert("那麼多" + typeName[whichType(pic)] + "要幹嘛！！不能貪心歐＜３");
+      return;
+    }
+    else{
+      for(i = 0;i<4;i++){
+        if(ramPosition[i]==0){
+          ramPosition[i]=1;
+          break;
+        }
+        else
+          plus+=w;
+      }
+    }
+
+  }
   count[whichType(pic)]++;
   currentNode = document.getElementById("content");
   var plateNode = document.createElement("div");
   plateNode.setAttribute("class", "plate");
-  plateNode.setAttribute("id", pic + "Plate");
-  plateNode.setAttribute("style", "top:" + x + "px;left:" + y + "px;z-index:" + z + ";width:" + w + "px;height:" + h + "px;");
+  if(whichType(pic)==4)
+    plateNode.setAttribute("id",i +"-"+ pic + "Plate");
+  else
+    plateNode.setAttribute("id", pic + "Plate");
+  plateNode.setAttribute("style", "top:" + x + "px;left:" + (y+plus) + "px;z-index:" + z + ";width:" + w + "px;height:" + h + "px;");
   plateNode.setAttribute("ondrop", "drop(event)");
   plateNode.setAttribute("ondragover", "allowDrop(event)");
   var newNode = document.createElement("img");
   plateNode.appendChild(newNode);
-  newNode.setAttribute("id", pic);
+  if(whichType(pic)==4)
+    newNode.setAttribute("id", i + "-" + pic);
+  else
+    newNode.setAttribute("id", pic);
   newNode.setAttribute("width", w);
   newNode.setAttribute("height", h);
   newNode.setAttribute("src", typeName[whichType(pic)] + "/" + pic + ".png");
@@ -94,10 +130,6 @@ function insert(x, y, z, pic, h, w) {
   newNode.draggable = "true";
 
   currentNode.appendChild(plateNode);
-  /*localStorage.setItem(idcount+"-id", document.getElementById( "pic" ).value);
-  localStorage.setItem(idcount+"-x", document.getElementById( "x" ).value);
-  localStorage.setItem(idcount+"-y", document.getElementById( "y" ).value);
-  localStorage.setItem("idcount", idcount);*/
 }
 
 
@@ -269,13 +301,13 @@ function check(){
                 obj.HDD=t[j].id;
               if(whichType(t[j].id)==4){
                 if(ramCount==1)
-                  obj.RAM1=t[j].id;
+                  obj.RAM1=t[j].id.slice(2,t[j].id.length);
                 else if(ramCount==2)
-                  obj.RAM2=t[j].id;
+                  obj.RAM2=t[j].id.slice(2,t[j].id.length);
                 else if(ramCount==3)
-                  obj.RAM3=t[j].id;
+                  obj.RAM3=t[j].id.slice(2,t[j].id.length);
                 else if(ramCount==4)
-                  obj.RAM4=t[j].id;
+                  obj.RAM4=t[j].id.slice(2,t[j].id.length);
                 ramCount++;
               }
               if(whichType(t[j].id)==5)
@@ -319,6 +351,8 @@ function show(tag){
   for(var i=0;i<7;i++){
     count[i]=0;
   }
+  for(var i=0;i<4;i++)
+    ramPosition[i]=0;
   if(obj.CPU!="none")
     insert(10,20,2,obj.CPU,100,100);
   if(obj.MB!="none")
@@ -330,13 +364,13 @@ function show(tag){
   if(obj.RAM1!="none")
     insert(175,20,2,obj.RAM1,400,40);
   if(obj.RAM2!="none")
-    insert(10,20,2,obj.CPU,100,100);
+  insert(175,20,2,obj.RAM2,400,40);
   if(obj.RAM3!="none")
-    insert(10,20,2,obj.CPU,100,100);
+  insert(175,20,2,obj.RAM3,400,40);
   if(obj.RAM4!="none")
-    insert(10,20,2,obj.CPU,100,100);
+  insert(175,20,2,obj.RAM4,400,40);
   if(obj.VGA!="none")
-    insert(250,750,2,obj.VGA,75,350)
+  insert(250,750,2,obj.VGA,75,350);
   if(obj.POW!="none")
     insert(10,20,2,obj.CPU,100,100);
   document.getElementById("tag").value = tag;
@@ -367,13 +401,13 @@ function save(){//第一次用json就上手
                   obj.HDD=t[j].id;
                 if(whichType(t[j].id)==4){
                   if(ramCount==1)
-                    obj.RAM1=t[j].id;
+                    obj.RAM1=t[j].id.slice(2,t[j].id.length);
                   else if(ramCount==2)
-                    obj.RAM2=t[j].id;
+                    obj.RAM2=t[j].id.slice(2,t[j].id.length);
                   else if(ramCount==3)
-                    obj.RAM3=t[j].id;
+                    obj.RAM3=t[j].id.slice(2,t[j].id.length);
                   else if(ramCount==4)
-                    obj.RAM4=t[j].id;
+                    obj.RAM4=t[j].id.slice(2,t[j].id.length);
                   ramCount++;
                 }
                 if(whichType(t[j].id)==5)
@@ -434,7 +468,7 @@ function mouseOver( e )
 {  
   var text="";
   if(e.target.id=="i38100k")
-      text="                     時脈(GHz)	內顯 		腳位	代號		製程	核心/執行緒	 TDP	 支援記憶體類型<br>8th Core i3-8100K    3.6G		UHD 630 	1151    Coffee Lake     14      4C / 4T		 65W     DDR4-2400"
+      text="產品名稱"
   document.getElementById("explain1").innerHTML=text;
 } // end function mouseOver
 
