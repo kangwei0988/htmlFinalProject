@@ -12,7 +12,13 @@ window.fbAsyncInit = function() {
     version          : 'v3.2'
   });
 };
-
+function fbshare(){
+  FB.ui({
+    method: 'share',
+    display: 'popup',
+    href: 'https://kangwei0988.github.io/htmlFinalProject/%E6%9C%9F%E6%9C%AB%E5%B0%88%E6%A1%88',
+  }, function(response){});
+}
 (function(d, s, id){
    var js, fjs = d.getElementsByTagName(s)[0];
    if (d.getElementById(id)) {return;}
