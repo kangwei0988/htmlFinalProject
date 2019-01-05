@@ -23,6 +23,7 @@
             font-family: "cwTeXYen", sans-serif;
             background-image: url("back1.jpg");
             font-size: 24px;
+            font-weight: bold;
             background-repeat: no-repeat;
             background-size: cover;
             margin: 0;
@@ -147,14 +148,15 @@
             position: relative;
             height:4%;
             text-align: center;
-            border-left:5px ridge burlywood;
-            border-right: 5px ridge burlywood;
+            font-size: 45px;
         }
         #explain2 {
+            width:100%;
             position: relative;
+            text-align: center;
             height: 48%;
             border: 5px solid burlywood;
-            border-radius: 10px;
+            border-radius: 9999px;
         }
 
         #main {
@@ -330,12 +332,12 @@
     </div>
     <div id="main">
         <div id="content">
-            <img id="trash" src="trashcan.jpg" ondrop="dropDel(event)" ondragover="allowDrop(event)" style="top:30px; right: 5px; z-index: 1; height: 150px; width: 250px;">
+            <img id="trash" src="trash.png" ondrop="dropDel(event)" ondragover="allowDrop(event)" style="bottom:0px;right:0px; z-index: 1; height: 100px; width: 150px;">
         </div>
         <div id="explain">
             <div id="explain1"></div>
-            <div id="title">123456</div>
-            <div id="explain2"></div>
+            <div id="title">目前配餐</div>
+            <div ><p id="explain2"></p></div>
         </div>
     </div></br>
     <div id="footer">
