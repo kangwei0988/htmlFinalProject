@@ -221,6 +221,9 @@
             width: 425px;
             height: 80px;
         }
+        #trash{
+            position: absolute;
+        }
     </style>
 </head>
 <script src="777.js"></script>
@@ -327,9 +330,7 @@
     </div>
     <div id="main">
         <div id="content">
-            <div class="plate" id="trash" ondrop="dropDel(event)" ondragover="allowDrop(event)" style="top:30px; left: 750px; z-index: 1; height: 100px; width: 100px;">
-                trash
-            </div>
+            <img id="trash" src="trashcan.jpg" ondrop="dropDel(event)" ondragover="allowDrop(event)" style="top:30px; right: 5px; z-index: 1; height: 150px; width: 250px;">
         </div>
         <div id="explain">
             <div id="explain1"></div>

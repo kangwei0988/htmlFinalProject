@@ -429,3 +429,13 @@ function start(){
   }
   console.log("fuck");
 }
+
+function mouseOver( e )
+{  
+  var text="";
+  if(e.target.id=="i38100k")
+      text="                     時脈(GHz)	內顯 		腳位	代號		製程	核心/執行緒	 TDP	 支援記憶體類型<br>8th Core i3-8100K    3.6G		UHD 630 	1151    Coffee Lake     14      4C / 4T		 65W     DDR4-2400"
+  document.getElementById("explain1").innerHTML=text;
+} // end function mouseOver
+
+document.addEventListener( "mouseover", mouseOver, false );

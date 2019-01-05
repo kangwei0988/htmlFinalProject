@@ -1,0 +1,19 @@
+Intel Core 桌上型 CPU	時脈(GHz)	內顯 		腳位	代號		製程	核心/執行緒	 TDP	 支援記憶體類型
+
+
+4th Core i7-4790K 	4.00G (4.40G)*	HD4600  	1150	Haswell Refresh	22	4C / 8T	       	 88W	 1333/1600MHz
+
+8th Core i7-8700K	3.7G(↑4.7G)*	UHD 630 	1151	Coffee Lake	14	6C / 12T	 95W	 DDR4-2666
+
+9th Core i9-9900K       3.6G(↑5.0G)*   UHD 630		1151    Coffee Lake     14	6C / 12T	 95W	 DDR4-2666
+
+8th Core i3-8100K	3.6G		UHD 630 	1151    Coffee Lake     14      4C / 4T		 65W     DDR4-2400
+
+ 
+AMD
+
+FX-8370			4.00G(4.3G)	NO		AM3+    Piledriver      32      8C / 8T		 125W    DDR3-1866
+
+R3-2200G                3.5G(3.7G)	Radeon Vega 8   AM4	Raven Ridge	14      4C / 4T		 65W     DDR4-2667
+
+R7-2700			3.2G(4.1G)	NO		AM4	Pinnacle Ridge	12	8C / 16T	 65W 	 DDR4-3200
