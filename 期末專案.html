@@ -132,6 +132,7 @@
         }
 
         #explain {
+            right:2%;
             position: relative;
             width: 30%;
             height: 100%;
@@ -151,12 +152,11 @@
             font-size: 45px;
         }
         #explain2 {
-            width:100%;
             position: relative;
             text-align: center;
             height: 48%;
             border: 5px solid burlywood;
-            border-radius: 9999px;
+            border-radius: 10px;
         }
 
         #main {
@@ -298,10 +298,10 @@
             <nav>RAM
                 <ul>
                     <li id="a"><img src="hyperx.png" height="50px" width="100%"></li>
-                    <li onclick="insert(175,20,2,'hyperx2400',400,40)">DDR4 2400</li>
-                    <li onclick="insert(175,20,2,'3000',400,40)">DDR4 3000</li>
-                    <li onclick="insert(175,20,2,'3000RGB',400,40)">DDR4 3000 RGB</li>
-                    <li onclick="insert(175,20,2,'1333',400,40)">DDR3 1333</li>
+                    <li onclick="insert(175,20,2,'hyperx2400',400,40)">DDR4 2400 8GB</li>
+                    <li onclick="insert(175,20,2,'3000',400,40)">DDR4 3000 16GB</li>
+                    <li onclick="insert(175,20,2,'3000RGB',400,40)">DDR4 3000 RGB 8GB</li>
+                    <li onclick="insert(175,20,2,'1333',400,40)">DDR3 1333 4GB</li>
                 </ul>
             </nav>
         </div>
@@ -345,7 +345,7 @@
             <button type="button" id="boot" onclick="boost()"><img src="BOOT.png" style="width:40px;height:40px;"></button>
             <button type="button" id="fb" ><img src='FB.png' style='width:40px;height:40px;' id="shareBtn"></button>
             <button type="button" id="save" onclick="save()"><img src="SAVE.png" style="width:40px;height:40px;"></button>
-            <input type="text" id="tag" style="width:100px;" placeholder="儲存請按左邊">
+            <input type="text" id="tag" style="width:100px;padding:5px 15px; border:2px black solid;cursor:pointer;" placeholder="請輸入存檔名稱" >
             <nav class="list" >LIST
                 <ul id="saveList">
                 </ul>
