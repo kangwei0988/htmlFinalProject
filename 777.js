@@ -4,6 +4,23 @@ var count = [0, 0, 0, 0, 0, 0, 0];
 //順序:cpu,mb,ssd,hdd,ram,vga,pow
 var typeName = ["CPU", "MB", "SSD", "傳統硬碟", "RAM", "VGA", "電源供應器"];
 
+window.fbAsyncInit = function() {
+  FB.init({
+    appId            : '190381168487019',
+    autoLogAppEvents : true,
+    xfbml            : true,
+    version          : 'v3.2'
+  });
+};
+
+(function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "https://connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
+
 function allowDrop(ev) {
   ev.preventDefault();
 }
@@ -214,3 +231,50 @@ function insertmb(pic) {
   localStorage.setItem("idcount", idcount);*/
 }
 
+
+
+function save(){//第一次用json就上手
+  for(var i=0;i<localStorage.length;i++)
+    if(localStorage.key(i)==document.getElementById("tag").value){
+      alert("已經有這個tag了，請換個tag名稱!");
+      return;
+    }
+  var x = document.getElementById("content").childNodes;
+    var ramCount = 1;
+    var obj={CPU:'none', MB:'none', SSD:'none', HDD:'none', RAM1:'none', RAM2:'none', RAM3:'none', RAM4:'none',  VGA:'none', POW:'none'};
+    for(var i=0;i<x.length;i++){
+        if(x[i].nodeName=="IMG")
+          obj.MB=x[i].id;
+        else if(x[i].nodeName=="DIV"){
+          if(x[i].hasChildNodes){
+            var t = x[i].childNodes;
+            for(var j=0;j<t.length;j++){
+              if(t[j].nodeName=="IMG"){//順序:cpu,mb,ssd,hdd,ram,vga,pow
+                if(whichType(t[j].id)==0)
+                    obj.CPU=t[j].id;
+                if(whichType(t[j].id)==2)
+                  obj.SSD=t[j].id;
+                if(whichType(t[j].id)==3)
+                  obj.HDD=t[j].id;
+                if(whichType(t[j].id)==4){
+                  if(ramCount==1)
+                    obj.RAM1=t[j].id;
+                  else if(ramCount==2)
+                    obj.RAM2=t[j].id;
+                  else if(ramCount==3)
+                    obj.RAM3=t[j].id;
+                  else if(ramCount==4)
+                    obj.RAM4=t[j].id;
+                  ramCount++;
+                }
+                if(whichType(t[j].id)==5)
+                  obj.VGA=t[j].id;
+                if(whichType(t[j].id)==6)
+                  obj.POW=t[j].id;
+              }
+            }
+          }
+        }
+    }
+    localStorage.setItem(document.getElementById("tag").value,JSON.stringify(obj));
+}
