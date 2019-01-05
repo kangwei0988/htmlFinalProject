@@ -70,6 +70,7 @@ function dropDel(ev) {
 }
 
 function whichType(c) {
+  if(!c) return 10;
   if (c == "R72700" || c == "fx8350" || c == "i38100k" || c == "i74790k" || c == "i78700k" || c == "i99900k" || c == "R32200G") return 0;
   if (c == "H310M-K" || c == "PRIMEZ390-A" || c == "ROGSTRIXB350-FGAMING" || c == "ROGSTRIXX470-FGAMING" || c == "b85pro") return 1;
   if (c == "970EVONVMe1TB" || c == "970EVONVMe2TB" || c == "A1000480G" || c == "UV500480G") return 2;
@@ -274,10 +275,6 @@ function insertmb(pic) {
   newNode.setAttribute("ondragstart", "drag(event)");
   newNode.draggable = true;
   currentNode.appendChild(newNode);
-  /*localStorage.setItem(idcount+"-id", document.getElementById( "pic" ).value);
-  localStorage.setItem(idcount+"-x", document.getElementById( "x" ).value);
-  localStorage.setItem(idcount+"-y", document.getElementById( "y" ).value);
-  localStorage.setItem("idcount", idcount);*/
 }
 
 function check(){
@@ -324,11 +321,11 @@ function check(){
   text+="固態硬碟: "+obj.SSD+"<br>";
   text+="機械硬碟: "+obj.HDD+"<br>";
   text+="記憶體: "+obj.RAM1;
-  if(ramCount>1)
+  if(obj.RAM2!="none")
     text+="   "+obj.RAM2;
-  if(ramCount>2)
+  if(obj.RAM3!="none")
     text+="   "+obj.RAM3;
-  if(ramCount>3)
+  if(obj.RAM4!="none")
     text+="   "+obj.RAM4;
   text+="<br>獨立顯示卡: "+obj.VGA+"<br>";
   text+="電源供應器: "+obj.POW+"<br>";
@@ -461,6 +458,45 @@ function start(){
     currentNode.appendChild(newNode);
   }
   console.log("fuck");
+}
+
+function boom(){
+
+}
+
+function boost(){
+  //確認各零件
+  var nodeList;
+  var x = document.getElementById("content").childNodes;
+  var mb ="";
+  for(var i=0;i<x.length;i++){
+    console.log(mb);
+    if(whichType(x[i].id)==1){
+      mb=x[i].id;
+      console.log(mb);
+    }
+     
+  }
+  if(mb==""){//有無主機板
+    boom();
+    console.log("no");
+    alert("沒有主機板");
+    return;
+  }
+  if(!document.getElementById(mb+"CpuPlate").hasChildNodes()){//有無cpu
+    boom();
+    alert("沒有CPU");
+    return;
+  }
+  else{//是cpu對嗎
+    nodeList=document.getElementById(mb+"CpuPlate").childNodes;
+    if(whichType(nodeList[0].id)!=1){
+      boom();
+      alert("cpu槽插錯了!");
+      return;
+    }
+  }
+
 }
 
 function mouseOver( e )
