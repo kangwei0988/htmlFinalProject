@@ -85,9 +85,8 @@ function insert(x, y, z, pic, h, w) {
     alert("已經有" + typeName[whichType(pic)] + "了！！不能貪心歐＜３");
     return;
   }
-  
+  var plus=0;
   if(whichType(pic)==4){
-    var plus=0;
     var i;
     if(count[whichType(pic)] > 3){
       alert("那麼多" + typeName[whichType(pic)] + "要幹嘛！！不能貪心歐＜３");
