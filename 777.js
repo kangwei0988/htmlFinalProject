@@ -30,18 +30,34 @@ function drag(ev) {
 function drop(ev) {
   ev.preventDefault();
   if (ev.target.tagName.toLowerCase() == "img")//防止圖片塞在圖片內
-    return;
-  if(whichType[ev.target.id]==1)//防止mb亂動
-    return;
+    return; 
   var data = ev.dataTransfer.getData("text");
+  if(whichType(data)==1)//防止mb亂動
+    return;
   ev.target.appendChild(document.getElementById(data));
 }
 function dropDel(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
-  document.getElementById(data).remove();
-  document.getElementById(data + "Plate").remove();
-  count[whichType(data)]--;
+  if(whichType(data)==1){
+    var r=confirm("如果要將主機板移除，其他零件也會一並移除歐\n請先確認已儲存您的清單以免清單遺失<3\n確認移除嗎?");
+    if(r){
+      var x = document.getElementById("content").childNodes;
+      for(var i=x.length-1;i>=0;i--){
+        if(x[i].id!="trash")  
+          x[i].remove();
+      }
+      for(var i = 0;i<7;i++)
+        count[i]=0;
+    }
+    else
+      return;
+  }
+  else{
+    document.getElementById(data).remove();
+    document.getElementById(data + "Plate").remove();
+    count[whichType(data)]--;
+  }
 }
 
 function whichType(c) {
@@ -225,7 +241,7 @@ function insertmb(pic) {
   newNode.setAttribute("src", typeName[whichType(pic)] + "/" + pic + ".png");
   newNode.setAttribute("style", "top:0px;left:150px;z-index:1;");
   newNode.setAttribute("ondragstart", "drag(event)");
-  newNode.draggable = false;
+  newNode.draggable = true;
   currentNode.appendChild(newNode);
   /*localStorage.setItem(idcount+"-id", document.getElementById( "pic" ).value);
   localStorage.setItem(idcount+"-x", document.getElementById( "x" ).value);
