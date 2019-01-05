@@ -296,6 +296,50 @@ if (pic != "H310M-K") {
   plateRAM4Node.setAttribute("ondragover", "allowDrop(event)");
   currentNode.appendChild(plateRAM4Node);
 }
+  //HDD
+  var plateHddNode = document.createElement("div");
+  plateHddNode.setAttribute("class", "MBPlateHdd");
+  plateHddNode.setAttribute("id", pic + "HddPlate");
+  if (pic == "H310M-K") {
+    plateHddNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
+  }
+  if (pic == "PRIMEZ390-A") {
+    plateHddNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
+  }
+  if (pic == "b85pro") {
+    plateHddNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
+  }
+  if (pic == "ROGSTRIXB350-FGAMING") {
+    plateHddNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
+  }
+  if (pic == "ROGSTRIXX470-FGAMING") {
+    plateHddNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
+  }
+  plateHddNode.setAttribute("ondrop", "drop(event)");
+  plateHddNode.setAttribute("ondragover", "allowDrop(event)");
+  currentNode.appendChild(plateHddNode);
+  //POW
+  var platePowNode = document.createElement("div");
+  platePowNode.setAttribute("class", "MBPlatePow");
+  platePowNode.setAttribute("id", pic + "PowPlate");
+  if (pic == "H310M-K") {
+    platePowNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
+  }
+  if (pic == "PRIMEZ390-A") {
+    platePowNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
+  }
+  if (pic == "b85pro") {
+    platePowNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
+  }
+  if (pic == "ROGSTRIXB350-FGAMING") {
+    platePowNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
+  }
+  if (pic == "ROGSTRIXX470-FGAMING") {
+    platePowNode.setAttribute("style", "top:445px;left:385px;z-index:2;width:135px;height:25px;");
+  }
+  platePowNode.setAttribute("ondrop", "drop(event)");
+  platePowNode.setAttribute("ondragover", "allowDrop(event)");
+  currentNode.appendChild(platePowNode);
   //MBpic
   var newNode = document.createElement("img");
   newNode.setAttribute("id", pic);
@@ -519,9 +563,7 @@ function boost(){
     console.log(mb);
     if(whichType(x[i].id)==1){
       mb=x[i].id;
-      console.log(mb);
-    }
-     
+    } 
   }
   if(mb==""){//有無主機板
     boom();
@@ -536,41 +578,103 @@ function boost(){
   }
   else{//是cpu對嗎
     nodeList=document.getElementById(mb+"CpuPlate").childNodes;
-    if(whichType(nodeList[0].id)!=1){
+    if(whichType(nodeList[0].id)!=0){
       boom();
       alert("cpu槽插錯了!");
       return;
     }
   }
   if(mb=="H310M-K"){//唯一ram插槽2個
-    if(!(document.getElementById(mb+"Ram1Plate").hasChildNodes||document.getElementById(mb+"Ram2Plate").hasChildNodes)){
+    if(!(document.getElementById(mb+"Ram1Plate").hasChildNodes()||document.getElementById(mb+"Ram2Plate").hasChildNodes())){//有無記憶體
       boom();
       alert("沒有記憶體!");
       return;
     }
-    else{
+    else{//有無插錯
       nodeList=document.getElementById(mb+"Ram1Plate").childNodes;
-      if(whichType(nodeList[0].id)!=1){
-        boom();
-        alert("記憶體槽插錯了!");
-        return;
-      }
+      if(document.getElementById(mb+"Ram1Plate").hasChildNodes())
+        if(whichType(nodeList[0].id)!=4){
+          boom();
+          alert("記憶體槽插錯了!");
+          return;
+        }
       nodeList=document.getElementById(mb+"Ram2Plate").childNodes;
-      if(whichType(nodeList[0].id)!=1){
-        boom();
-        alert("記憶體槽插錯了!");
-        return;
-      }
+      if(document.getElementById(mb+"Ram2Plate").hasChildNodes())
+        if(whichType(nodeList[0].id)!=4){
+          boom();
+          alert("記憶體槽插錯了!");
+          return;
+        }
     }
   }
+  else{//其他主板
+    if(!(document.getElementById(mb+"Ram1Plate").hasChildNodes()||document.getElementById(mb+"Ram2Plate").hasChildNodes()||document.getElementById(mb+"Ram3Plate").hasChildNodes()||document.getElementById(mb+"Ram4Plate").hasChildNodes())){//有無記憶體
+      boom();
+      alert("沒有記憶體!");
+      return;
+    }
+    else{//有無插錯
+      nodeList=document.getElementById(mb+"Ram1Plate").childNodes;
+      if(document.getElementById(mb+"Ram1Plate").hasChildNodes())
+        if(whichType(nodeList[0].id)!=4){
+          boom();
+          alert("記憶體槽插錯了!");
+          return;
+        }
+      nodeList=document.getElementById(mb+"Ram2Plate").childNodes;
+      if(document.getElementById(mb+"Ram2Plate").hasChildNodes())
+        if(whichType(nodeList[0].id)!=4){
+          boom();
+          alert("記憶體槽插錯了!");
+          return;
+        }
+      nodeList=document.getElementById(mb+"Ram3Plate").childNodes;
+      if(document.getElementById(mb+"Ram3Plate").hasChildNodes())
+        if(whichType(nodeList[0].id)!=4){
+          boom();
+          alert("記憶體槽插錯了!");
+          return;
+        }
+      nodeList=document.getElementById(mb+"Ram4Plate").childNodes;
+      if(document.getElementById(mb+"Ram2Plate").hasChildNodes())
+        if(whichType(nodeList[0].id)!=4){
+          boom();
+          alert("記憶體槽插錯了!");
+          return;
+        }
+    }
+  }
+  if(!document.getElementById(mb+"PciePlate").hasChildNodes()&&!document.getElementById(mb+"PciePlate").hasChildNodes()){//有無開機碟
+    boom();
+    alert("沒有開機碟!");
+    return;
+  }
+  else{//有開機碟
+    nodeList=document.getElementById(mb+"PciePlate").childNodes;
+    if(document.getElementById(mb+"PciePlate").hasChildNodes())
+      if(whichType(nodeList[0].id)!=2){
+        boom();
+        alert("PCIE槽插錯了!");
+        return;
+      }
+    nodeList=document.getElementById(mb+"PciePlate").childNodes;
+    if(document.getElementById(mb+"PciePlate").hasChildNodes())
+      if(whichType(nodeList[0].id)!=2){
+        boom();
+        alert("PCIE槽插錯了!");
+        return;
+      }
+  }
   
-}
+
+}//成功啟動  順序:cpu,mb,ssd,hdd,ram,vga,pow
 
 function mouseOver( e )
 {  
   var text="";
   if(e.target.id=="i38100k")
       text="產品名稱"
+  
   document.getElementById("explain1").innerHTML=text;
 } // end function mouseOver
 
