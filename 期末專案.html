@@ -184,8 +184,10 @@
         div.plate {
             position: absolute;
             /*margin: 1px;
-            padding: 1px;*/
-            border: 3px solid blue;
+            padding: 1px;
+            border: 3px solid blue;*/
+            border:5px burlywood solid;
+            cursor:pointer;
         }
 
         .MBPlateRam,
@@ -199,25 +201,88 @@
             position: absolute;
         }
 
-        div.MBPlateCpu img {
-            width: 125px;
-            height: 125px;
+        #H310M-KCpuPlate img{
+            width:125px;
+            height:125px;
+        }
+        #PRIMEZ390-ACpuPlate img{
+            width:97px;
+            height:85px;
+        }
+        #b85proCpuPlate img{
+            width:110px;
+            height:90px;
+        }
+        #ROGSTRIXB350-FGAMINGCpuPlate img{
+            width:96px;
+            height:82px;
+        }
+        #ROGSTRIXX470-FGAMINGCpuPlate img{
+            width:95px;
+            height:80px;
         }
 
-        div.MBPlatePcie img {
+        #H310M-KPciePlate img {
             width: 135px;
             height: 25px;
         }
-
-        div.MBPlateRam img {
+        #PRIMEZ390-APciePlate img{
+            width:250px;
+            height:30px;
+        }
+        #b85proPciePlate img{
+            width:135px;
+            height:25px;
+        }
+        #ROGSTRIXB350-FGAMINGPciePlate img{
+            width:145px;
+            height:35px;
+        }
+        #ROGSTRIXX470-FGAMINGPciePlate img{
+            width:135px;
+            height:25px;
+        }
+        #H310M-KVgaPlate img {
+            width: 420px;
+            height: 85px;
+        }
+        #PRIMEZ390-AVgaPlate img{
+            width:350px;
+            height:80px;
+        }
+        #b85proVgaPlate img{
+            width:375px;
+            height:80px;
+        }
+        #ROGSTRIXB350-FGAMINGVgaPlate img{
+            width:370px;
+            height:80px;
+        }
+        #ROGSTRIXX470-FGAMINGVgaPlate img{
+            width:385px;
+            height:75px;
+        } 
+        #H310M-KRam1Plate img,#H310M-KRam2Plate img{
             width: 20px;
             height: 368px;
         }
-
-        div.MBPlateVga img {
-            width: 425px;
-            height: 80px;
+        #PRIMEZ390-ARam1Plate img,#PRIMEZ390-ARam2Plate img,#PRIMEZ390-ARam3Plate img,#PRIMEZ390-ARam4Plate img{
+            width:15px;
+            height:270px;
         }
+        #b85proRam1Plate img,#b85proRam2Plate img,#b85proRam3Plate img,#b85proRam4Plate img{
+            width:18px;
+            height:270px;
+        }
+        #ROGSTRIXB350-FGAMINGRam1Plate img,#ROGSTRIXB350-FGAMINGRam2Plate img,#ROGSTRIXB350-FGAMINGRam3Plate img,#ROGSTRIXB350-FGAMINGRam4Plate img{
+            width:150px;
+            height:282px;
+        }
+        #ROGSTRIXX470-FGAMINGRam1Plate img, #ROGSTRIXX470-FGAMINGRam2Plate img, #ROGSTRIXX470-FGAMINGRam3Plate img, #ROGSTRIXX470-FGAMINGRam4Plate img{
+            width:15px;
+            height:280px;
+        } 
+        
         #trash{
             position: absolute;
         }
@@ -290,10 +355,10 @@
             <nav>HDD
                 <ul>
                     <li id="a"><img src="Seagate.png" height="50px" width="100%"> 3.5吋 SATA3</li>
-                    <li onclick="insert(380,790,2,'SEAGATE HDD 1T',200,200)">1TB (64M/7200轉)</li>
-                    <li onclick="insert(380,790,2,'SEAGATE HDD 2T',200,200)">2TB (256M/7200轉)</li>
-                    <li onclick="insert(380,790,2,'SEAGATE HDD 3T',200,200)">3TB (256M/5400轉)</li>
-                    <li onclick="insert(380,790,2,'SEAGATE HDD 4T',200,200)">4TB (256M/5400轉)</li>
+                    <li onclick="insert(380,790,2,'SEAGATE HDD 1T',200,170)">1TB (64M/7200轉)</li>
+                    <li onclick="insert(380,790,2,'SEAGATE HDD 2T',200,170)">2TB (256M/7200轉)</li>
+                    <li onclick="insert(380,790,2,'SEAGATE HDD 3T',200,170)">3TB (256M/5400轉)</li>
+                    <li onclick="insert(380,790,2,'SEAGATE HDD 4T',200,170)">4TB (256M/5400轉)</li>
                 </ul>
             </nav>
         </div>
@@ -302,10 +367,10 @@
             <nav>RAM
                 <ul>
                     <li id="a"><img src="hyperx.png" height="50px" width="100%"></li>
-                    <li onclick="insert(175,20,2,'hyperx2400',400,40)">DDR4 2400 8GB</li>
-                    <li onclick="insert(175,20,2,'3000',400,40)">DDR4 3000 16GB</li>
-                    <li onclick="insert(175,20,2,'3000RGB',400,40)">DDR4 3000 RGB 8GB</li>
-                    <li onclick="insert(175,20,2,'1333',400,40)">DDR3 1333 4GB</li>
+                    <li onclick="insert(175,20,2,'DDR4 2400 8GB',400,40)">DDR4 2400 8GB</li>
+                    <li onclick="insert(175,20,2,'DDR4 3000 16GB',400,40)">DDR4 3000 16GB</li>
+                    <li onclick="insert(175,20,2,'DDR4 3000 RGB 8GB',400,40)">DDR4 3000 RGB 8GB</li>
+                    <li onclick="insert(175,20,2,'DDR3 1333 4GB',400,40)">DDR3 1333 4GB</li>
                 </ul>
             </nav>
         </div>
@@ -314,10 +379,10 @@
             <nav>VGA
                 <ul>
                     <li id="a"><img src="ASUS_Logo.png" height="30px" width="100%"></li>
-                    <li onclick="insert(270,790,2,'RTX2080TI',75,350)">RTX2080TI</li>
-                    <li onclick="insert(270,790,2,'RTX2070',75,350)">RTX2070</li>
-                    <li onclick="insert(270,790,2,'GTX1080TI',75,350)">GTX1080TI</li>
-                    <li onclick="insert(270,790,2,'GTX1066',75,350)">GTX1066</li>
+                    <li onclick="insert(270,790,2,'RTX2080TI',75,300)">RTX2080TI</li>
+                    <li onclick="insert(270,790,2,'RTX2070',75,300)">RTX2070</li>
+                    <li onclick="insert(270,790,2,'GTX1080TI',75,300)">GTX1080TI</li>
+                    <li onclick="insert(270,790,2,'GTX1066',75,300)">GTX1066</li>
                 </ul>
             </nav>
         </div>
@@ -326,10 +391,10 @@
             <nav>POW
                 <ul>
                     <li id="a"><img src="coolermaster.png" height="80px" width="100%"></li>
-                    <li onclick="insert(10,790,2,'COOLERMASTER 450W',150,150)">450W</li>
-                    <li onclick="insert(10,790,2,'COOLERMASTER 550W',150,150)">550W </li>
-                    <li onclick="insert(10,790,2,'COOLERMASTER 650W',150,150)">650W</li>
-                    <li onclick="insert(10,790,2,'COOLERMASTER 850W',150,150)">850W</li>
+                    <li onclick="insert(10,790,2,'COOLERMASTER 450W',150,170)">450W</li>
+                    <li onclick="insert(10,790,2,'COOLERMASTER 550W',150,170)">550W </li>
+                    <li onclick="insert(10,790,2,'COOLERMASTER 650W',150,170)">650W</li>
+                    <li onclick="insert(10,790,2,'COOLERMASTER 850W',150,170)">850W</li>
                 </ul>
             </nav>
         </div>
