@@ -1,0 +1,89 @@
+1066
+
+ASUS ROG Strix GeForceR GTX 1060 展現個人獨特的電競主張
+超頻模式 1873 MHz Boost Clock，提供卓越效能與遊戲體驗
+DirectCU III 冰霜酷銅散熱技術搭載專利扇葉風扇設計 提高 30%散熱效能，強化3 倍降噪效果
+全新FanConnect系統風扇連接設計 搭配連接至系統風扇的四針腳 GPU 控制接頭，可隨GPU溫度提升調節風扇，提供最佳散熱效能
+業界獨家全自動製程技術結合超合金電源技術 II ，呈現一流品質與最佳可靠性
+Aura RGB 燈光模組 可淋漓演繹個人獨特的電競主張
+獨家內建兩組原生HDMI 享有身歷其境的虛擬實境體驗
+結合 Xsplit Gamecaster 功能的 GPU Tweak II 提供直覺式效能調整功能，可讓您即時串流遊戲過程
+NVIDIA ANSEL 提供劃時代的嶄新遊戲截圖方式
+NVIDIA GameWorks? 提供互動式劇院級享受，以及流暢無比的遊戲效能
+
+繪圖核心：GTX 1060
+記憶體:6GB GDDR5
+核心時脈：1785MHz
+CUDA 數：1280
+輸出介面：1*DVI-D / 2*HDMI / 2*DP
+電源接口：1*6pin
+顯卡長度：24.2公分
+
+華碩 DUAL-GTX1060-O6G雪原豹(1785MHz/24.2cm/註四年) $9590
+
+1080TI
+
+ASUS Turbo GeForceR GTX 1080 Ti 11GB
+GDDR5X 提供最佳 VR、4K 遊戲體驗及
+系統整合
+NVIDIA GeForceR GTX 1080 Ti：GPU 較 GeForce GTX1080 可加速 35% 效能，提供疾速遊戲體驗。
+雙滾珠軸承風扇：減少摩擦力使運作更順暢，還可延長 2 倍使用壽命並提升散熱效能。
+業界獨家全自動製程技術結合超合金電源技術 II：呈現優異品質與最佳可靠度。
+獨家內建兩組原生 HDMI：可同時連接螢幕及 VR 裝置，輕鬆坐享身歷其境的遊戲體驗。
+ASUS 客製化背光 Logo：透過專屬 LED 背光 Logo 設計，打造專屬個人風格電腦。
+結合 Xsplit Gamecaster 功能的 GPU Tweak II：提供直覺式效能調整和即時遊戲串流功能。
+
+繪圖核心：GTX 1080Ti
+記憶體:11GB GDDR5X
+核心時脈：1480MHz
+CUDA 數：3584
+輸出介面：1*DVI-D / 2*HDMI / 2*DP
+電源接口：1*6pin/1*8pin
+顯卡長度：26.67公分
+
+華碩 TURBO-GTX1080TI-11G(1785MHz/24.2cm/註四年) $28090
+
+2070
+
+ASUS Dual GeForce RTX? 2070 8GB GDDR6 搭載強大散熱效能，帶您享受超高更新率及 VR 遊戲體驗
+NVIDIA TURING?: ASUS GeForce RTX 顯示卡搭載 Turing? GPU 架構和全新 RTX? 平台， 提供比前代顯示卡最多高 6 倍的效能，讓即時光線追蹤與 AI 的威能在遊戲中大放異彩。
+DirectX 12: 支援全新視覺效果及渲染技術，達到更逼真的遊戲體驗。
+NVIDIA Shadowplay?錄製並和好友分享高畫質遊戲影片、螢幕截圖與即時串流。
+專利翼型葉片風扇 能產生高氣壓、降低噪音，具備通過 IP5X 認證的防塵性以及安靜遊玩的 0dB 模式。
+2.7 插槽設計 比前代產品的散熱表面積增加超過 50%。
+採保護背板強化 ， 可防止 PCB 彎曲及佈局損壞。
+144 小時驗證方案 在一系列嚴謹測試中確保顯示卡的可靠性。
+GPU Tweak II 提供直覺式性能微調及溫控功能。
+
+繪圖核心：RTX 2070
+記憶體:8GB GDDR6
+核心時脈：1620MHz
+CUDA 數：2304
+輸出介面：1*HDMI /3*DP/1*USB Type-C
+電源接口：1*6pin + 1*8pin
+顯卡長度：26.8公分
+
+華碩 DUAL-RTX2070-8G(1620MHz/26.8cm/註四年) $16990
+
+
+2080TI
+
+ASUS Turbo GeForceR RTX 2080 Ti 11GB GDDR6 採用高效能的鼓風式散熱，適用於小型機殼與 SLI 設備環境。
+NVIDIA TURINGTM：ASUS GeForceR RTX 顯示卡搭載 Turing GPU 架構和全新 RTX 平台，可提供比前代顯示卡高達 6 倍的效能，並透過即時光線追蹤與人工智慧運算能力帶來絕佳的遊戲體驗。
+DirectX 12：提供全新的視覺效果與渲染技術，展現更為栩栩如生的遊戲畫面。
+4K：GeForceR RTX 讓極致 4K 遊戲經驗更上一層樓，最新遊戲大作也能以精美細節順暢遊玩。
+革新的護罩 提高多顯卡配置的散熱效能，增加機殼內有限的氣流量。
+IP5X 防塵雙滾珠軸承風扇 採用更大、更安靜且防塵的風扇，可轉移更多的熱氣，提高散熱效能。
+144 小時驗證計劃： 在一系列嚴謹測試中確保顯示卡的可靠性。
+GPU Tweak II： 提供直覺式顯卡效能調教 & 顯卡散熱控制。
+
+繪圖核心：RTX 2080 Ti
+記憶體:11GB GDDR6
+核心時脈：1545MHz
+CUDA 數：4352
+輸出介面：1*HDMI / 3*DP/1*USB Type-C
+電源接口：2*8pin
+顯卡長度：26.8公分
+
+華碩 DUAL-RTX2080Ti-11G(1545MHz/26.8cm/註四年)  $37690
+
