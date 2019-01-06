@@ -876,7 +876,7 @@ function introduce(){
   backpic.setAttribute("src","introduce/1.jpg")
   backpic.setAttribute("id","backpic");
   currentNode.appendChild(backpic);
-  bkcount=1;
+  bkcount=2;
   var backbtn = document.createElement("button");
   backbtn.addEventListener("click",doSomeThing,false);
   backbtn.setAttribute("id","backbtn");
