@@ -801,7 +801,6 @@ function boost(){
   vid.volume = 0.1;
   vid.play();
   setTimeout(function(){ alert("組裝電腦大成功!\n大吉大利，今晚早點睡，幹你娘累暴"); vid.hidden=true; vidplay=1;}, 10000);
-  
 }//成功啟動  順序:cpu,mb,ssd,hdd,ram,vga,pow
 
 function mouseOver( e )
