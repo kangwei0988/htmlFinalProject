@@ -467,7 +467,7 @@ function check() {
   }//end load
   var text = "";
   text += "處理器: " + obj.CPU + "<br>";
-  text += "主機板: " + obj.MB + "\n";
+  text += "主機板: " + obj.MB + "<br>";
   text += "固態硬碟: " + obj.SSD + "<br>";
   text += "機械硬碟: " + obj.HDD + "<br>";
   text += "記憶體: " + obj.RAM1;
