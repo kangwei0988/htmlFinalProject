@@ -3,6 +3,7 @@ var currentNode;
 var count = [0, 0, 0, 0, 0, 0, 0];
 var ramPosition = [0, 0, 0, 0];
 var vidplay = 1;
+var obj = { CPU: 'none', MB: 'none', SSD: 'none', HDD: 'none', RAM1: 'none', RAM2: 'none', RAM3: 'none', RAM4: 'none', VGA: 'none', POW: 'none' };
 //順序:cpu,mb,ssd,hdd,ram,vga,pow
 var typeName = ["CPU", "MB", "SSD", "HDD", "RAM", "VGA", "POW"];
 
@@ -22,6 +23,23 @@ window.fbAsyncInit = function () {
   js.src = "https://connect.facebook.net/en_US/sdk.js";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
+function returnMenu(){
+  var text = "這是我用這個網站配出來的電競神機，左打69核處理器，右打87G顯示卡<br>";
+  text += "處理器: " + obj.CPU + "<br>";
+  text += "主機板: " + obj.MB + "<br>";
+  text += "固態硬碟: " + obj.SSD + "<br>";
+  text += "機械硬碟: " + obj.HDD + "<br>";
+  text += "記憶體: " + obj.RAM1;
+  if (obj.RAM2 != "none")
+    text += "   " + obj.RAM2;
+  if (obj.RAM3 != "none")
+    text += "   " + obj.RAM3;
+  if (obj.RAM4 != "none")
+    text += "   " + obj.RAM4;
+  text += "<br>獨立顯示卡: " + obj.VGA + "<br>";
+  text += "電源供應器: " + obj.POW + "<br>";
+}
 
 function allowDrop(ev) {
   ev.preventDefault();
@@ -433,7 +451,7 @@ function insertmb(pic) {
 function check() {
   var x = document.getElementById("content").childNodes;
   var ramCount = 1;
-  var obj = { CPU: 'none', MB: 'none', SSD: 'none', HDD: 'none', RAM1: 'none', RAM2: 'none', RAM3: 'none', RAM4: 'none', VGA: 'none', POW: 'none' };
+  obj.CPU=obj.MB=obj.SSD=obj.HDD=obj.RAM1= obj.RAM2=obj.RAM3=obj.RAM4=obj.VGA=obj.POW="none";
   for (var i = 0; i < x.length; i++) {
     if (x[i].nodeName == "IMG" && x[i].id != "trash")
       obj.MB = x[i].id;
@@ -532,7 +550,7 @@ function save() {//第一次用json就上手
       return;
     }
   var x = document.getElementById("content").childNodes;
-  var ramCount = 1;
+  /*var ramCount = 1;
   var obj = { CPU: 'none', MB: 'none', SSD: 'none', HDD: 'none', RAM1: 'none', RAM2: 'none', RAM3: 'none', RAM4: 'none', VGA: 'none', POW: 'none' };
   for (var i = 0; i < x.length; i++) {
     if (x[i].nodeName == "IMG" && x[i].id != "trash")
@@ -567,7 +585,7 @@ function save() {//第一次用json就上手
         }
       }
     }
-  }
+  }*/
   if(!document.getElementById("tag").value){
     window.alert("請輸入存檔名，不可空白呦!");
   }
