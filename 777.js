@@ -653,7 +653,6 @@ function boost(){
     }
   }
   if(mb=="H310M-K"){//唯一ram插槽2個
-    console.log(mb);
     if(!(document.getElementById(mb+"Ram1Plate").hasChildNodes()||document.getElementById(mb+"Ram2Plate").hasChildNodes())){//有無記憶體
       boom();
       setTimeout(function(){ document.getElementById("boom").remove(); alert("沒有記憶體!");}, 3000);
@@ -661,8 +660,6 @@ function boost(){
     }
     else{//有無插錯
       nodeList=document.getElementById(mb+"Ram1Plate").childNodes;
-      console.log(whichDdr("1333"));
-      console.log(whichDdr("i38100k"));
       if(document.getElementById(mb+"Ram1Plate").hasChildNodes()){
         if(whichType(nodeList[0].id)!=4){
           boom();
