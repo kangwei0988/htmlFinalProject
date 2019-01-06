@@ -653,14 +653,7 @@ function boost(){
     }
   }
   if(mb=="H310M-K"){//唯一ram插槽2個
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    console.log(mb);
->>>>>>> parent of cfbbae2... 圖片修改大小
-=======
-    console.log(mb);
->>>>>>> parent of cfbbae2... 圖片修改大小
+
     if(!(document.getElementById(mb+"Ram1Plate").hasChildNodes()||document.getElementById(mb+"Ram2Plate").hasChildNodes())){//有無記憶體
       boom();
       setTimeout(function(){ document.getElementById("boom").remove(); alert("沒有記憶體!");}, 3000);
@@ -668,16 +661,15 @@ function boost(){
     }
     else{//有無插錯
       nodeList=document.getElementById(mb+"Ram1Plate").childNodes;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
       console.log(whichDdr("1333"));
       console.log(whichDdr("i38100k"));
->>>>>>> parent of cfbbae2... 圖片修改大小
-=======
+
       console.log(whichDdr("1333"));
       console.log(whichDdr("i38100k"));
->>>>>>> parent of cfbbae2... 圖片修改大小
+
+      console.log(whichDdr("1333"));
+      console.log(whichDdr("i38100k"));
       if(document.getElementById(mb+"Ram1Plate").hasChildNodes()){
         if(whichType(nodeList[0].id)!=4){
           boom();
@@ -816,14 +808,7 @@ function boost(){
   vid.volume = 0.1;
   vid.play();
   setTimeout(function(){ alert("組裝電腦大成功!\n大吉大利，今晚早點睡，幹你娘累暴"); vid.hidden=true; vidplay=1;}, 10000);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  
->>>>>>> parent of cfbbae2... 圖片修改大小
-=======
-  
->>>>>>> parent of cfbbae2... 圖片修改大小
+
 }//成功啟動  順序:cpu,mb,ssd,hdd,ram,vga,pow
 
 function mouseOver( e )
