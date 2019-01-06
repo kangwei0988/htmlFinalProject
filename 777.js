@@ -3,6 +3,7 @@ var currentNode;
 var count = [0, 0, 0, 0, 0, 0, 0];
 var ramPosition = [0, 0, 0, 0];
 var vidplay = 1;
+var work = 1;
 var obj = { CPU: 'none', MB: 'none', SSD: 'none', HDD: 'none', RAM1: 'none', RAM2: 'none', RAM3: 'none', RAM4: 'none', VGA: 'none', POW: 'none' };
 //順序:cpu,mb,ssd,hdd,ram,vga,pow
 var typeName = ["CPU", "MB", "SSD", "HDD", "RAM", "VGA", "POW"];
@@ -515,7 +516,7 @@ function show(tag) {
   if (obj.SSD != "none")
     insert(180, 790, 2, obj.SSD, 75, 225)
   if (obj.HDD != "none")
-    insert(380, 790, 2, obj.HDD, 200, 200);
+    insert(380, 790, 2, obj.HDD, 200, 170);
   if (obj.RAM1 != "none")
     insert(175, 20, 2, obj.RAM1, 400, 40);
   if (obj.RAM2 != "none")
@@ -843,5 +844,45 @@ function mouseOver(e) {
     text = "Seagate【BarraCuda】新梭魚 4TB 3.5吋桌上型硬碟<br>◆容量：4TB <br>◆SATA 6Gb/s <br>◆5400轉 <br>◆256MB緩衝記憶體 <br>◆工作負載55TB/年<br>◆低功耗省電 ";
   document.getElementById("explain1").innerHTML = text;
 } // end function mouseOver
+var bkcount;
+function doSomeThing(){
+  if(bkcount==5){
+    document.getElementById("backpic").remove();
+    document.getElementById("back").remove();
+    document.getElementById("backbtn").remove();
+    bkcount=1;
+  }
+  else{
+    currentNode = document.body;
+    document.getElementById("backpic").remove();
+    var backpic = document.createElement("img");
+    backpic.setAttribute("src","introduce/"+bkcount+".jpg")
+    backpic.setAttribute("id","backpic");
+    currentNode.appendChild(backpic);
+    bkcount++;
+  }
+  
+}
 
-document.addEventListener("mouseover", mouseOver, false);
+function introduce(){
+  currentNode = document.body;
+  var back = document.createElement("img");
+  back.setAttribute("src","introduce/10.jpg")
+  back.setAttribute("id","back");
+  back.setAttribute("width","100%");
+  back.setAttribute("height","100%");
+  currentNode.appendChild(back);
+  var backpic = document.createElement("img");
+  backpic.setAttribute("src","introduce/1.jpg")
+  backpic.setAttribute("id","backpic");
+  currentNode.appendChild(backpic);
+  bkcount=1;
+  var backbtn = document.createElement("button");
+  backbtn.addEventListener("click",doSomeThing,false);
+  backbtn.setAttribute("id","backbtn");
+  backbtn.setAttribute("value","下一頁");
+  currentNode.appendChild(backbtn);
+}
+
+
+document.addEventListener("mouseup", mouseOver, false);
