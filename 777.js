@@ -127,6 +127,8 @@ function insert(x, y, z, pic, h, w) {
     newNode.setAttribute("style", "z-index:" + z + ";");
     newNode.setAttribute("width", w + "px");
     newNode.setAttribute("height", h + "px");
+    newNode.setAttribute("ondragstart", "drag(event)");
+    newNode.draggable = "true";
     currentNode.appendChild(plateNode);
     count[6] = 1;
     return;
@@ -811,8 +813,67 @@ function boost() {
 function mouseOver(e) {
   var text = "";
   if (e.target.id == "i38100k")
-    text = "產品名稱"
-
+    text = "產品名稱: Core i3-8100K<br>時脈(GHz):3.60G<br>內顯:UHD 630<br>腳位:1151<br>代號:Coffee Lake<br>製程:14nm<br>核心/執行緒: 4C / 4T<br>TDP:65W<br>支援記憶體:DDR4-2400";
+  else if(e.target.id=="i74790k")
+    text = "產品名稱: Core i7-4790K<br>時脈(GHz):4.00G<br>內顯:HD4600<br>腳位:1150<br>代號:Haswell Refresh<br>製程:22nm<br>核心/執行緒: 4C / 8T<br>TDP:88W<br>支援記憶體:DDR3-1600";
+  else if(e.target.id=="i78700k")
+    text = "產品名稱: Core i7-8700K<br>時脈(GHz):3.70G<br>內顯:UHD 630<br>腳位:1151<br>代號:Coffee Lake<br>製程:14nm<br>核心/執行緒: 6C / 12T<br>TDP:95W<br>支援記憶體:DDR4-2666";
+  else if(e.target.id=="i99900k")
+    text = "產品名稱: Core i9-9900K<br>時脈(GHz):3.60G<br>內顯:UHD 630<br>腳位:1151<br>代號:Coffee Lake<br>製程:14nm<br>核心/執行緒: 6C / 12T<br>TDP:95W<br>支援記憶體:DDR4-2666";
+  else if(e.target.id=="R32200G")
+    text = "產品名稱: R3-2200G <br>時脈(GHz):3.50G<br>內顯:Radeon Vega 8<br>腳位:AM4<br>代號:Raven Ridge<br>製程:14nm<br>核心/執行緒: 4C / 4T<br>TDP:65W<br>支援記憶體:DDR4-2666";
+  else if(e.target.id=="R72700")
+    text = "產品名稱: R7-2700<br>時脈(GHz):3.20G<br>內顯: 無<br>腳位:AM4<br>代號:Pinnacle Ridge<br>製程:12nm<br>核心/執行緒: 8C / 16T<br>TDP:65W<br>支援記憶體:DDR4-3200";
+  else if(e.target.id=="H310M-K")
+    text = "華碩 PRIME H310M-K<br>◆ 支援CPU ：1151腳位(intel 8代) <br>◆ 記憶體 ：2x DIMM / 32GB DDR4(max) <br>◆ 顯示輸出：1x D-Sub / 1x DVI <br>◆ 擴充插槽：1x PCIe 3.0x16 / 2x PCIe 3.0x1<br>◆ 主板尺寸：M-ATX<br>ASUS OptiMem： 仔細繞接佈線及通孔以維持訊號完整性，進而提升記憶體穩定性。<br>Fan Xpert： 靈活的風扇控制功能帶來極致散熱和靜音效果，加上 GPU 溫度感測，降低遊戲時的溫度。<br>5X 防護 III： 多重硬體防護，提供全方位保護。";
+  else if(e.target.id=="PRIMEZ390-A") 
+    text = "華碩 PRIME Z390-A<br>◆ 支援CPU ：1151腳位(intel 9/8代) <br>◆ 記憶體 ：4x DIMM / 64GB DDR4(max) <br>◆ 顯示輸出：1x D-Sub / 1x DVI <br>◆ 擴充插槽：1x PCIe 3.0x16 / 2x PCIe 3.0x16 / 3x PCIe 3.0x1 <br>◆ USB插槽 ：4x USB 3.1 Gen2 / 5xUSB 3.1 Gen1 / 6x USB 2.0/1.1 <br>◆ 主板尺寸：M-ATX<br>ASUS Aura Sync：可控制的內建 RGB 燈效，能輕鬆與不斷擴充的 Aura 支援硬體產品系列同步";
+  else if(e.target.id=="ROGSTRIXB350-FGAMING")
+      text="華碩 ROG STRIX B350-F GAMING<br>◆ 支援CPU ：AMD4腳位<br>◆ 記憶體 ：4x DIMM / 64GB DDR4(max) <br>◆ 顯示輸出：1x D-Sub / 1x DVI <br>◆ 擴充插槽：1x PCIe 3.0x16 / 2x PCIe 3.0x16 / 3x PCIe 2.0x1 <br>◆ USB插槽 ：2x USB 3.1 Gen2 / 4x USB 3.1 Gen1 / 6x USB 2.0/1.1 <br>◆ 主板尺寸：ATX <br>Aura Sync RGB LED：令人驚嘆的同步燈效和兩個Aura 4針腳RGB接頭";
+  else if(e.target.id=="ROGSTRIXX470-FGAMING")
+      text="華碩 ROG STRIX X470-F GAMING<br>◆ 支援CPU ：AM4腳位(AMD) <br>◆ 記憶體 ：4x DIMM / 64GB DDR4(max) <br>◆ 擴充插槽：2x PCIe 3.0x16 / 1x PCIe 2.0x16 <br>◆ USB插槽 ：2x USB 3.1 Gen2 / 4x USB 3.1 Gen1 <br>◆ 主板尺寸：ATX <br>Aura Sync RGB LED：同步的RGB照明技術能與支援Aura Sync 的廣大PC組件搭配，並支援可編程RGB燈條及 Phillip Hue 智慧照明。<br>內建 M.2 散熱器：為M.2 驅動器全面散熱，提供一致的存儲效能並增強可靠性";
+  else if(e.target.id=="b85pro")
+      text = "華碩 B85M-G<br>◆ 支援CPU ：1150腳位(intel 4代) <br>◆ 記憶體 ：4x DIMM / 32GB DDR3(max) <br>◆ 顯示輸出：1x D-Sub / 1x DVI <br>◆ 擴充插槽：1x PCIe 3.0x16 / 1x PCIe 2.0x16 /2x PCIe 2.0x1 / 3x PCI <br>◆ USB插槽 ：4x USB 3.0 / 8x USB 2.0/1.1 <br>◆ 主板尺寸：ATX <br>SupremeFX - 無懈可擊的聲音效果，彷彿置身遊戲中！<br>>Intel Gigabit 乙太網路與 GameFirst II - 連線速度無比迅速！";
+  else if(e.target.id=="970EVONVMe1TB")
+    text="SAMSUNG 三星 970 EVO 1TB NVMe M.2 2280 PCIe 固態硬碟<br>採用最新的V-NAND技術與新增強的Phoenix控制器<br>專為頻繁從事影音製作、編輯或模擬等高工作量的技術用戶、遊戲玩家與專業人士設計 <br>讀:3400/寫:2500/TLC";
+  else if(e.target.id=="970EVONVMe2TB")
+    text ="SAMSUNG 三星 970 EVO 2TB NVMe M.2 2280 PCIe 固態硬碟<br>採用最新的V-NAND技術與新增強的Phoenix控制器 <br>讀取速度3,400MB/s，寫入速度2,500MB/s<br>專為頻繁從事影音製作、編輯或模擬等高工作量的技術用戶、遊戲玩家與專業人士設計 ";
+  else if(e.target.id=="UV500480G")
+    text = "金士頓 Kingston UV500 (M.2 2280) 120GB SSD 固態硬碟 (SUV500M8/120G)<br>讀520M/寫320M/3D TLC<br>晶片：NAND TLC;Marvell Dean控制器 <br>加密保護：具備TCG Opal 2.0 256位元硬體加密技術  ";
+  else if(e.target.id=="A1000480G")
+    text="金士頓 Kingston A1000 480GB M.2 2280 PCIe NVMe? Gen 3.0x2 SSD 固態硬碟<br>讀1500M/寫900M/3D TLC/<br>隨機4k讀/寫:高達100K/90KIOPS <br>單面設計－適合輕薄筆記型電腦";
+  else if(e.target.id=="GTX1066")
+    text = "華碩 DUAL-GTX1060-O6G雪原豹<br>繪圖核心：GTX 1060<br>記憶體:6GB GDDR5<br>核心時脈：1785MHz<br>CUDA 數：1280<br>輸出介面：1*DVI-D / 2*HDMI / 2*DP<br>電源接口：1*6pin<br>顯卡長度：24.2公分<br>建議功耗:120W";
+  else if(e.target.id=="GTX1080TI")
+    text = "華碩 TURBO-GTX1080TI-11G<br>繪圖核心：GTX 1080Ti<br>記憶體:11GB GDDR5X<br>核心時脈：1480MHz<br>CUDA 數：3584<br>輸出介面：1*DVI-D / 2*HDMI / 2*DP<br>電源接口：1*6pin/1*8pin<br>顯卡長度：26.67公分<br>建議功耗:250w";
+  else if(e.target.id=="RTX2070")
+    text = "華碩 DUAL-RTX2070-8G<br>繪圖核心：RTX 2070<br>記憶體:8GB GDDR6<br>核心時脈：1620MHz<br>CUDA 數：2304<br>輸出介面：1*HDMI /3*DP/1*USB Type-C<br>電源接口：1*6pin + 1*8pin<br>顯卡長度：26.8公分<br>建議功耗:185w";
+  else if(e.target.id=="RTX2080TI")
+    text ="華碩 DUAL-RTX2080Ti-11G<br>繪圖核心：RTX 2080 Ti<br>記憶體:11GB GDDR6<br>核心時脈：1545MHz<br>CUDA 數：4352<br>輸出介面：1*HDMI / 3*DP/1*USB Type-C<br>電源接口：2*8pin<br>顯卡長度：26.8公分<br>建議功耗:260w" ;
+  else if(e.target.id=="COOLERMASTER 450W")
+    text = "酷碼 CM GX 450W/銅牌/DC-DC架構/單路 12V<br>型號	RS450-ACAAB3<br>類型	Intel Form Factor ATX 12V V2.31<br>尺寸 (寬 / 高 / 深)	150 x 140 x 86mm <br>輸入電壓	100-240Vac<br>輸入頻率	47-63Hz<br>電源良好信號	100~500ms<br>80 PLUS銅牌 (Bronze)認證：在50%負載下轉換效率可達85%。<br>100%全日系電容，確保性能表現與穩定度。";
+  else if(e.target.id=="COOLERMASTER 550W")
+    text = "酷碼 CM GX 550W/銅牌/DC-DC架構/單路 12V<br>型號	RS550-ACAAB3<br>類型	Intel Form Factor ATX 12V V2.31<br> 尺寸 (寬 / 高 / 深)	150 x 140 x 86mm <br>輸入電壓	100-240Vac<br>輸入範圍?	全範圍<br>輸入頻率	47-63Hz<br>電源良好信號	100~500ms<br>80 PLUS銅牌 (Bronze)認證：在50%負載下轉換效率可達85%。<br>100%全日系電容，確保性能表現與穩定度。";
+  else if(e.target.id=="COOLERMASTER 650W")
+    text ="酷碼 MasterWatt 650W/銅牌/半模<br>型號	MPX-6501-AMAAB<br>類型	ATX 12V V2.4<br>尺寸 (長 x 寬 x 高)	140 x 150 x 86 mm<br>輸入電壓	100-240 Vac<br>輸入電流	10-5 A<br>輸入頻率	50-60 Hz<br>電源良好信號	100-500 ms<br>MasterWatt 是一款擁有創新半無風扇模式的 80 PLUS 銅牌電源供應器。";
+  else if(e.target.id=="COOLERMASTER 850W") 
+    text = "酷碼 Master V 850W/金牌/全模<br>類型	Intel Form Factor ATX 12V V2.31<br>尺寸 (寬 / 高 / 深)	150 x 170 x 86mm<br>輸入電壓	90-264Vac<br>輸入電流	5 - 10A<br>輸入頻率	50-60Hz<br>電源良好信號	100~500ms<br>通過 80 Plus 金牌認證，半載 (50%) 下可提供高達 93 % 的轉換效率<br>搭載 135 mm FDB 風扇，安靜又耐用<br>100% 高品質日系電容，提供最佳的性能表現與可靠度";
+  else if(e.target.id.search("1333")!=-1)
+    text = "Kingston 4GB DDR3 1333 桌上型記憶體<br>★桌上型電腦專用 <br>★規格：DDR3-1333 <br>★容量：4GB <br>★針腳：240-pin";
+  else if(e.target.id.search("2400")!=-1)
+    text = "HyperX FURY DDR4-2400 8GB 桌上型超頻記憶體<br>◆最高2400MHz自動超頻 <br>◆1.2V 低電耗 <br>◆支援Intel X99主板 <br>◆黑色時尚矮版散熱片 ";
+  else if(e.target.id.search("3000 16G")!=-1)
+    text = "HyperX Predator DDR4 3000 16GB桌上型超頻記憶體<br>◆16GB多工處理不lag<br>◆3000MHz展現王者效能 <br>◆支援X99主板和Intel i7 CPU <br>◆Intel XMP一秒超頻 <br>◆比DDR3更省電 <br>◆頂級消光黑散熱片散熱效率佳";
+  else if(e.target.id.search("3000 RGB")!=-1)
+    text = "HyperX Predator DDR4 3000 8GB桌上型超頻記憶體<br>◆8GB大容量多工處理lag <br>◆3000Hz展現王者效能 <br>◆支援X99主板和Intel i7 CPU <br>◆Intel XMP一秒超頻 <br>◆比DDR3更省電 <br>◆頂級消光黑散熱片散熱效率佳 ";
+  else if(e.target.id=="SEAGATE HDD 1T")
+    text = "Seagate【BarraCuda】新梭魚 1TB 3.5吋桌上型硬碟<br>◆容量:1TB <br>◆SATA 6Gb/s <br>◆7200轉 高效能 <br>◆64MB緩衝記憶體";
+  else if(e.target.id=="SEAGATE HDD 2T")
+    text = "Seagate【BarraCuda】新梭魚 2TB 3.5吋桌上型硬碟<br>◆容量：2TB <br>◆SATA 6Gb/s <br>◆7200轉 高效能 <br>◆256MB緩衝記憶體 <br>◆工作負載55TB/年 <br>◆低功耗省電 ";
+  else if(e.target.id=="SEAGATE HDD 3T")
+    text = "Seagate【BarraCuda】新梭魚 3TB 3.5吋桌上型硬碟<br>◆容量：3TB <br>◆SATA 6Gb/s <br>◆5400轉 <br>◆256MB緩衝記憶體 <br>◆工作負載55TB/年 <br>◆低功耗省電 ";
+  else if(e.target.id=="SEAGATE HDD 4T")
+    text = "Seagate【BarraCuda】新梭魚 4TB 3.5吋桌上型硬碟<br>◆容量：4TB <br>◆SATA 6Gb/s <br>◆5400轉 <br>◆256MB緩衝記憶體 <br>◆工作負載55TB/年<br>◆低功耗省電 ";
   document.getElementById("explain1").innerHTML = text;
 } // end function mouseOver
 
