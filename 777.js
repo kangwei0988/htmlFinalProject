@@ -654,6 +654,10 @@ function boost(){
   }
   if(mb=="H310M-K"){//唯一ram插槽2個
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    console.log(mb);
+>>>>>>> parent of cfbbae2... 圖片修改大小
 =======
     console.log(mb);
 >>>>>>> parent of cfbbae2... 圖片修改大小
@@ -665,6 +669,11 @@ function boost(){
     else{//有無插錯
       nodeList=document.getElementById(mb+"Ram1Plate").childNodes;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      console.log(whichDdr("1333"));
+      console.log(whichDdr("i38100k"));
+>>>>>>> parent of cfbbae2... 圖片修改大小
 =======
       console.log(whichDdr("1333"));
       console.log(whichDdr("i38100k"));
@@ -808,6 +817,10 @@ function boost(){
   vid.play();
   setTimeout(function(){ alert("組裝電腦大成功!\n大吉大利，今晚早點睡，幹你娘累暴"); vid.hidden=true; vidplay=1;}, 10000);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  
+>>>>>>> parent of cfbbae2... 圖片修改大小
 =======
   
 >>>>>>> parent of cfbbae2... 圖片修改大小
