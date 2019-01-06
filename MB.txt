@@ -1,0 +1,112 @@
+華碩 PRIME H310M-K 主機板
+
+◆ 支援CPU ：1151腳位(intel 8代) 
+◆ 記憶體 ：2x DIMM / 32GB DDR4(max) 
+◆ 顯示輸出：1x D-Sub / 1x DVI 
+◆ 擴充插槽：1x PCIe 3.0x16 / 2x PCIe 3.0x1 
+◆ 儲存插槽：4x SATA 
+◆ USB插槽 ：4x USB 3.1 Gen1 / 6x USB 2.0/1.1 
+◆ 網路連接：Intel Gigabit LAN 
+◆ 主板尺寸：M-ATX 
+◆ 體積(長x寬)：22.6 x 18.5 cm 
+
+Intel LGA-1151 mATX 主機板、DDR4 2666MHz、SATA 6Gbps 及 USB 3.1 Gen 1
+ASUS OptiMem： 仔細繞接佈線及通孔以維持訊號完整性，進而提升記憶體穩定性。
+Fan Xpert： 靈活的風扇控制功能帶來極致散熱和靜音效果，加上 GPU 溫度感測，降低遊戲時的溫度。
+5X 防護 III： 多重硬體防護，提供全方位保護。
+
+華碩 PRIME H310M-K R2.0(M-ATX/1A1D/註四年), $2290
+
+Z390-A
+
+
+◆ 支援CPU ：1151腳位(intel 9/8代) 
+◆ 記憶體 ：4x DIMM / 64GB DDR4(max) 
+◆ 顯示輸出：1x D-Sub / 1x DVI 
+◆ 擴充插槽：1x PCIe 3.0x16 / 2x PCIe 3.0x16 / 3x PCIe 3.0x1 
+◆ 儲存插槽：6x SATA 
+◆ USB插槽 ：4x USB 3.1 Gen2 / 5xUSB 3.1 Gen1 / 6x USB 2.0/1.1 
+◆ 網路連接：Intel Gigabit LAN 
+◆ 主板尺寸：M-ATX 
+◆ 體積(長x寬)：30.5 x 24.4 cm 
+
+Intel LGA 1151 ATX 主機板搭載智慧超頻功能、DDR4 4266 MHz、雙 M.2、HDMI、支援 Intel Optane Memory、 SATA 6Gb/s、USB 3.1 Gen 2 Type-C
+AI 智能超頻：分析 CPU 與散熱器狀態提供最佳超頻設定，達到極為接近專家手動調校的結果。
+OptiMem II：細心佈線與穿孔以及接地層最佳化，可保持訊號完整度並提升記憶體超頻
+增強型電源解決方案：頂級組件提供更佳的電源效率
+UEFI BIOS：全新 UEFI 選項包括可讓您輕鬆找到設定項目的搜索功能
+領先業界的散熱選項：透過 Fan Xpert 4 或廣受好評的 UEFI 提供風扇與水冷式幫浦的完整控制
+M.2 散熱器：散熱器效率出眾，能讓 M.2 SSD 降溫多達 20￠XC，傳輸速度不受限，並提升可靠度
+疾速傳輸 ：全面支援 Intel Optane Memory、IntelR RST、Thunderbolt 3 及雙 M.2，擁有絕佳彈性
+ASUS Aura Sync：可控制的內建 RGB 燈效，能輕鬆與不斷擴充的 Aura 支援硬體產品系列同步
+
+華碩 PRIME Z390-A(ATX/1H1P/I網/註四年), $5490
+
+B350
+
+◆ 支援CPU ：AMD4腳位
+◆ 記憶體 ：4x DIMM / 64GB DDR4(max) 
+◆ 顯示輸出：1x D-Sub / 1x DVI 
+◆ 擴充插槽：1x PCIe 3.0x16 / 2x PCIe 3.0x16 / 3x PCIe 2.0x1 
+◆ 儲存插槽：6x SATA 
+◆ USB插槽 ：2x USB 3.1 Gen2 / 4x USB 3.1 Gen1 / 6x USB 2.0/1.1 
+◆ 網路連接：Intel I211 AT 
+◆ 主板尺寸：ATX 
+◆ 體積(長x寬)：30.5 x 24.4 cm 
+
+AMD AM4 B350 ATX 遊戲主機板搭載Aura Sync RGB LED、 DDR4 3200MHz、M.2、SATA 6Gb/s及 USB 3.1連接埠
+Pro Gaming系列主機板的繼承者
+Aura Sync RGB LED：令人驚嘆的同步燈效和兩個Aura 4針腳RGB接頭
+SupremeFX：獨家全新晶片搭配直覺式 Sonic Studio III 及 Sonic Radar III
+5 向全方位優化：一鍵超頻全面優化
+最佳遊戲連線：M.2、USB 3.1 A型連接埠
+最佳遊戲網路：IntelR Gigabit 乙太網路、LANGuard 及 GameFirst 技術
+最佳遊戲防護：Safeslot 及頂級組件，提供最大耐用性
+
+華碩 ROG STRIX B350-F GAMING(ATX/1H1P/I網/註五年), $2590
+
+X470
+
+◆ 支援CPU ：AM4腳位(AMD) 
+◆ 記憶體 ：4x DIMM / 64GB DDR4(max) 
+◆ 擴充插槽：2x PCIe 3.0x16 / 1x PCIe 2.0x16 
+◆ 儲存插槽：2x M.2 / 6x SATA 
+◆ USB插槽 ：2x USB 3.1 Gen2 / 4x USB 3.1 Gen1 
+◆ 網路連接：Intel I211 AT 
+◆ 主板尺寸：ATX 
+◆ 體積(長x寬)：30.5 x 24.4 cm 
+
+AMD X470 ATX 電競主機板搭載 M.2散熱模組、Aura Sync RGB LED 燈效、支援 DDR4 3600 MHz、雙 M.2、SATA 6Gbps 和 USB 3.1 Gen 2 連接埠。
+AMD Ryzen? 處理器 AM4 插槽
+Aura Sync RGB LED：同步的RGB照明技術能與支援Aura Sync 的廣大PC組件搭配，並支援可編程RGB燈條及 Phillip Hue 智慧照明。
+內建 M.2 散熱器：為M.2 驅動器全面散熱，提供一致的存儲效能並增強可靠性。
+最佳遊戲聯結： IntelR Gigabit 乙太網路、LANGuard、雙M.2 及 USB 3.1 Gen 2連接埠
+5 向全方位優化：一鍵超頻全面優化
+最佳遊戲音效：SupremeFX S1220A 與 Sonic Studio III 合作創造聽覺饗宴，讓您更加聲歷其境。
+最佳遊戲防護：預裝I / O護板、ASUS SafeSlot 及 多項高級元件，提供最大耐用性。
+
+華碩 ROG STRIX X470-F GAMING(ATX/1H1P/I網/註五年), $5990
+
+B85
+
+◆ 支援CPU ：1150腳位(intel 4代) 
+◆ 記憶體 ：4x DIMM / 32GB DDR3(max) 
+◆ 顯示輸出：1x D-Sub / 1x DVI 
+◆ 擴充插槽：1x PCIe 3.0x16 / 1x PCIe 2.0x16 /2x PCIe 2.0x1 / 3x PCI 
+◆ 儲存插槽：4x SATA 
+◆ USB插槽 ：4x USB 3.0 / 8x USB 2.0/1.1 
+◆ 網路連接：IntelR I217V
+◆ 主板尺寸：ATX 
+◆ 體積(長x寬)：30.5 x 22.8 cm 
+
+搭載 SupremeFX 音訊、Intel LAN 及高耐用度元件的超值遊戲級主機板
+支援第 4 代 IntelRCore? i7/ i5/ i3/ PentiumR / CeleronR 處理器的 LGA1150 插槽
+IntelR B85 Express 晶片組
+支援雙 DDR3 1600
+SupremeFX - 無懈可擊的聲音效果，彷彿置身遊戲中！
+Intel Gigabit 乙太網路與 GameFirst II - 連線速度無比迅速！
+Sonic Radar - 掃描、偵測，主宰遊戲戰場
+Gamer's Guardian 在真實世界提供銅牆鐵壁般的防護！
+AI Suite 3 - 無論任何情況，都能提供最佳化效能！
+
+華碩 B85M-G(M-ATX/1A1D1H/全固態/前U3/註四年), $2590

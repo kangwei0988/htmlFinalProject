@@ -1,0 +1,51 @@
+SAMSUNG 三星 970 EVO 1TB NVMe M.2 2280 PCIe 固態硬碟
+
+採用最新的V-NAND技術與新增強的Phoenix控制器 
+讀取速度3,400MB/s，寫入速度2,500MB/s 
+M.2 2280尺寸搭配 PCIe Gen 3.0x4, NVMe 1.3介面 
+MTBF(平均故障間隔時間)150萬小時 
+採用 3D TLC快閃記憶體 
+專為頻繁從事影音製作、編輯或模擬等高工作量的技術用戶、遊戲玩家與專業人士設計 
+
+三星Samsung 970 EVO NVMe 1TB/M.2 PCIe 讀:3400/寫:2500/TLC/五年保 *星睿奇, $9500
+
+SAMSUNG 三星 970 EVO 2TB NVMe M.2 2280 PCIe 固態硬碟
+
+採用最新的V-NAND技術與新增強的Phoenix控制器 
+讀取速度3,400MB/s，寫入速度2,500MB/s 
+M.2 2280尺寸搭配 PCIe Gen 3.0x4, NVMe 1.3介面 
+MTBF(平均故障間隔時間)150萬小時 
+採用 3D TLC快閃記憶體 
+專為頻繁從事影音製作、編輯或模擬等高工作量的技術用戶、遊戲玩家與專業人士設計 
+
+三星Samsung 970 EVO NVMe 2TB/M.2 PCIe 讀:3500/寫:2500/TLC/五年保 *星睿奇, $18800 
+
+金士頓 Kingston UV500 (M.2 2280) 120GB SSD 固態硬碟 (SUV500M8/120G)
+
+讀520M/寫320M/3D TLC/五年保 
+最高讀取520MB/秒 
+最高寫入320MB/秒 
+容量：120GB 
+介面：M.2 2280;SATA-3(向下相容) 
+晶片：NAND TLC;Marvell Dean控制器 
+加密保護：具備TCG Opal 2.0 256位元硬體加密技術 
+原廠五年有限保固
+
+金士頓 UV500 480G/M.2 PCIe 2280/讀:520M/寫:320M/TLC顆粒/五年保, $2849 
+
+
+金士頓 Kingston A1000 480GB M.2 2280 PCIe NVMe? Gen 3.0x2 SSD 固態硬碟
+
+(SA1000M8/480G)
+讀1500M/寫900M/3D TLC/五年保 
+讀取1500MB/s;寫入900MB/s 
+容量：480GB 
+規格： M.2 22x80mm 
+傳輸介面 PCIe NVMe? Gen 3.0 x 2 通道 
+隨機4k讀/寫:高達100K/90KIOPS 
+單面設計－適合輕薄筆記型電腦 
+內建3D TLC 晶片 
+採用 NVMe 新標準(請注意：主機板需支援NVMe才能使用) 
+原廠五年有限保固、免費技術支援 
+
+金士頓 A1000 480G/M.2 PCIe 2280/讀:1500M/寫:900M/TLC顆粒/五年保, $2688 

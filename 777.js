@@ -626,6 +626,7 @@ function boom() {
   newNode.setAttribute("width","100%");
   newNode.setAttribute("height","100%");*/
   currentNode.appendChild(newNode);
+  vidplay=0;
 }
 
 function boost() {
@@ -641,19 +642,19 @@ function boost() {
   }
   if (mb == "") {//有無主機板
     boom();
-    setTimeout(function () { document.getElementById("boom").remove(); alert("沒有主機板"); }, 3000);
+    setTimeout(function () { document.getElementById("boom").remove(); alert("沒有主機板"); vidplay=1;}, 3000);
     return;
   }
   if (!document.getElementById(mb + "CpuPlate").hasChildNodes()) {//有無cpu
     boom();
-    setTimeout(function () { document.getElementById("boom").remove(); alert("沒有CPU"); }, 3000);
+    setTimeout(function () { document.getElementById("boom").remove(); alert("沒有CPU"); vidplay=1;}, 3000);
     return;
   }
   else {//是cpu對嗎
     nodeList = document.getElementById(mb + "CpuPlate").childNodes;
     if (whichType(nodeList[0].id) != 0) {
       boom();
-      setTimeout(function () { document.getElementById("boom").remove(); alert("cpu槽插錯了!"); }, 3000);
+      setTimeout(function () { document.getElementById("boom").remove(); alert("cpu槽插錯了!"); vidplay=1;}, 3000);
       return;
     }
   }
@@ -661,22 +662,20 @@ function boost() {
     console.log(mb);
     if (!(document.getElementById(mb + "Ram1Plate").hasChildNodes() || document.getElementById(mb + "Ram2Plate").hasChildNodes())) {//有無記憶體
       boom();
-      setTimeout(function () { document.getElementById("boom").remove(); alert("沒有記憶體!"); }, 3000);
+      setTimeout(function () { document.getElementById("boom").remove(); alert("沒有記憶體!"); vidplay=1;}, 3000);
       return;
     }
     else {//有無插錯
       nodeList = document.getElementById(mb + "Ram1Plate").childNodes;
-      console.log(whichDdr("1333"));
-      console.log(whichDdr("i38100k"));
       if (document.getElementById(mb + "Ram1Plate").hasChildNodes()) {
         if (whichType(nodeList[0].id) != 4) {
           boom();
-          setTimeout(function () { document.getElementById("boom").remove(); alert("記憶體槽插錯了!"); }, 3000);
+          setTimeout(function () { document.getElementById("boom").remove(); alert("記憶體槽插錯了!"); vidplay=1;}, 3000);
           return;
         }
         else if (whichDdr(document.getElementById(mb + "CpuPlate").childNodes[0].id) != whichDdr(nodeList[0].id)) {
           boom();
-          setTimeout(function () { document.getElementById("boom").remove(); alert("CPU不支援" + whichDdr(nodeList[0].id)); }, 3000);
+          setTimeout(function () { document.getElementById("boom").remove(); alert("CPU不支援" + whichDdr(nodeList[0].id)); vidplay=1;}, 3000);
           return;
         }
       }
@@ -684,12 +683,12 @@ function boost() {
       if (document.getElementById(mb + "Ram2Plate").hasChildNodes()) {
         if (whichType(nodeList[0].id) != 4) {
           boom();
-          setTimeout(function () { document.getElementById("boom").remove(); alert("記憶體槽插錯了!"); }, 3000);
+          setTimeout(function () { document.getElementById("boom").remove(); alert("記憶體槽插錯了!"); vidplay=1;}, 3000);
           return;
         }
         else if (whichDdr(document.getElementById(mb + "CpuPlate").childNodes[0].id) != whichDdr(nodeList[0].id)) {
           boom();
-          setTimeout(function () { document.getElementById("boom").remove(); alert("CPU不支援" + whichDdr(nodeList[0].id)); }, 3000);
+          setTimeout(function () { document.getElementById("boom").remove(); alert("CPU不支援" + whichDdr(nodeList[0].id)); vidplay=1;}, 3000);
           return;
         }
       }
@@ -698,7 +697,7 @@ function boost() {
   else {//其他主板
     if (!(document.getElementById(mb + "Ram1Plate").hasChildNodes() || document.getElementById(mb + "Ram2Plate").hasChildNodes() || document.getElementById(mb + "Ram3Plate").hasChildNodes() || document.getElementById(mb + "Ram4Plate").hasChildNodes())) {//有無記憶體
       boom();
-      setTimeout(function () { document.getElementById("boom").remove(); alert("沒有記憶體!"); }, 3000);
+      setTimeout(function () { document.getElementById("boom").remove(); alert("沒有記憶體!"); vidplay=1;}, 3000);
       return;
     }
     else {//有無插錯
@@ -706,12 +705,12 @@ function boost() {
       if (document.getElementById(mb + "Ram1Plate").hasChildNodes()) {
         if (whichType(nodeList[0].id) != 4) {
           boom();
-          setTimeout(function () { document.getElementById("boom").remove(); alert("記憶體槽插錯了!"); }, 3000);
+          setTimeout(function () { document.getElementById("boom").remove(); alert("記憶體槽插錯了!"); vidplay=1;}, 3000);
           return;
         }
         else if (whichDdr(document.getElementById(mb + "CpuPlate").childNodes[0].id) != whichDdr(nodeList[0].id)) {
           boom();
-          setTimeout(function () { document.getElementById("boom").remove(); alert("CPU不支援" + whichDdr(nodeList[0].id)); }, 3000);
+          setTimeout(function () { document.getElementById("boom").remove(); alert("CPU不支援" + whichDdr(nodeList[0].id));vidplay=1;}, 3000);
           return;
         }
       }
@@ -719,12 +718,12 @@ function boost() {
       if (document.getElementById(mb + "Ram2Plate").hasChildNodes()) {
         if (whichType(nodeList[0].id) != 4) {
           boom();
-          setTimeout(function () { document.getElementById("boom").remove(); alert("記憶體槽插錯了!"); }, 3000);
+          setTimeout(function () { document.getElementById("boom").remove(); alert("記憶體槽插錯了!"); vidplay=1;}, 3000);
           return;
         }
         else if (whichDdr(document.getElementById(mb + "CpuPlate").childNodes[0].id) != whichDdr(nodeList[0].id)) {
           boom();
-          setTimeout(function () { document.getElementById("boom").remove(); alert("CPU不支援" + whichDdr(nodeList[0].id)); }, 3000);
+          setTimeout(function () { document.getElementById("boom").remove(); alert("CPU不支援" + whichDdr(nodeList[0].id)); vidplay=1;}, 3000);
           return;
         }
       }
@@ -732,12 +731,12 @@ function boost() {
       if (document.getElementById(mb + "Ram3Plate").hasChildNodes()) {
         if (whichType(nodeList[0].id) != 4) {
           boom();
-          setTimeout(function () { document.getElementById("boom").remove(); alert("記憶體槽插錯了!"); }, 3000);
+          setTimeout(function () { document.getElementById("boom").remove(); alert("記憶體槽插錯了!"); vidplay=1;}, 3000);
           return;
         }
         else if (whichDdr(document.getElementById(mb + "CpuPlate").childNodes[0].id) != whichDdr(nodeList[0].id)) {
           boom();
-          setTimeout(function () { document.getElementById("boom").remove(); alert("CPU不支援" + whichDdr(nodeList[0].id)); }, 3000);
+          setTimeout(function () { document.getElementById("boom").remove(); alert("CPU不支援" + whichDdr(nodeList[0].id)); vidplay=1;}, 3000);
           return;
         }
       }
@@ -745,12 +744,12 @@ function boost() {
       if (document.getElementById(mb + "Ram4Plate").hasChildNodes()) {
         if (whichType(nodeList[0].id) != 4) {
           boom();
-          setTimeout(function () { document.getElementById("boom").remove(); alert("記憶體槽插錯了!"); }, 3000);
+          setTimeout(function () { document.getElementById("boom").remove(); alert("記憶體槽插錯了!"); vidplay=1;}, 3000);
           return;
         }
         else if (whichDdr(document.getElementById(mb + "CpuPlate").childNodes[0].id) != whichDdr(nodeList[0].id)) {
           boom();
-          setTimeout(function () { document.getElementById("boom").remove(); alert("CPU不支援" + whichDdr(nodeList[0].id)); }, 3000);
+          setTimeout(function () { document.getElementById("boom").remove(); alert("CPU不支援" + whichDdr(nodeList[0].id)); vidplay=1;}, 3000);
           return;
         }
       }
@@ -758,7 +757,7 @@ function boost() {
   }
   if (!(document.getElementById(mb + "PciePlate").hasChildNodes() || document.getElementById("hdd").hasChildNodes())) {//有無開機碟
     boom();
-    setTimeout(function () { document.getElementById("boom").remove(); alert("沒有開機碟!"); }, 3000);
+    setTimeout(function () { document.getElementById("boom").remove(); alert("沒有開機碟!"); vidplay=1;}, 3000);
     return;
   }
   else {//有開機碟
@@ -766,20 +765,20 @@ function boost() {
     if (document.getElementById(mb + "PciePlate").hasChildNodes())
       if (whichType(nodeList[0].id) != 2) {
         boom();
-        setTimeout(function () { document.getElementById("boom").remove(); alert("PCIE槽插錯了!"); }, 3000);
+        setTimeout(function () { document.getElementById("boom").remove(); alert("PCIE槽插錯了!"); vidplay=1;}, 3000);
         return;
       }
   }
   if (!document.getElementById("pow")) {//有無電源
     boom();
-    setTimeout(function () { document.getElementById("boom").remove(); alert("沒有電源!"); }, 3000);
+    setTimeout(function () { document.getElementById("boom").remove(); alert("沒有電源!"); vidplay=1;}, 3000);
     return;
   }
   if (!document.getElementById(mb + "VgaPlate").hasChildNodes()) {//有無顯卡
     var x = document.getElementById(mb + "CpuPlate").childNodes;
     if (x[0].id == "R72700") {
       boom();
-      setTimeout(function () { document.getElementById("boom").remove(); alert("2700無內顯，需搭配獨立顯卡\n沒有顯示晶片!"); }, 3000);
+      setTimeout(function () { document.getElementById("boom").remove(); alert("2700無內顯，需搭配獨立顯卡\n沒有顯示晶片!"); vidplay=1;}, 3000);
       return;
     }
   }
@@ -787,7 +786,7 @@ function boost() {
     nodeList = document.getElementById(mb + "VgaPlate").childNodes;
     if (whichType(nodeList[0].id) != 5) {
       boom();
-      setTimeout(function () { document.getElementById("boom").remove(); alert("PCI槽插錯了!"); }, 3000);
+      setTimeout(function () { document.getElementById("boom").remove(); alert("PCI槽插錯了!"); vidplay=1;}, 3000);
 
       return;
     }
@@ -796,7 +795,7 @@ function boost() {
   nodeList = document.getElementById(mb + "CpuPlate").childNodes;
   if (whichLag(mb) != whichLag(nodeList[0].id)) {
     boom();
-    setTimeout(function () { document.getElementById("boom").remove(); alert("cpu和主機板的腳位不合!!"); }, 3000);
+    setTimeout(function () { document.getElementById("boom").remove(); alert("cpu和主機板的腳位不合!!"); vidplay=1;}, 3000);
     return;
   }
   var vid = document.getElementById("myVideo");
@@ -805,7 +804,7 @@ function boost() {
   vid.hidden = false;
   vid.volume = 0.1;
   vid.play();
-  setTimeout(function () { alert("組裝電腦大成功!\n大吉大利，今晚早點睡，幹你娘累暴"); vid.hidden = true; vidplay = 1; }, 10000);
+  setTimeout(function () { alert("組裝電腦大成功!\n大吉大利，今晚早點睡，幹你娘累暴"); vid.hidden = true; vidplay = 1; }, 9500);
 
 }//成功啟動  順序:cpu,mb,ssd,hdd,ram,vga,pow
 
