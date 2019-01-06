@@ -24,25 +24,6 @@ window.fbAsyncInit = function () {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-
-
-/*function returnMenu(){
-  var text = "這是我用這個網站配出來的電競神機，左打69核處理器，右打87G顯示卡<br>";
-  text += "處理器: " + obj.CPU + "<br>";
-  text += "主機板: " + obj.MB + "<br>";
-  text += "固態硬碟: " + obj.SSD + "<br>";
-  text += "機械硬碟: " + obj.HDD + "<br>";
-  text += "記憶體: " + obj.RAM1;
-  if (obj.RAM2 != "none")
-    text += "   " + obj.RAM2;
-  if (obj.RAM3 != "none")
-    text += "   " + obj.RAM3;
-  if (obj.RAM4 != "none")
-    text += "   " + obj.RAM4;
-  text += "<br>獨立顯示卡: " + obj.VGA + "<br>";
-  text += "電源供應器: " + obj.POW + "<br>";
-}*/
-
 function allowDrop(ev) {
   ev.preventDefault();
 }
@@ -138,8 +119,6 @@ function insert(x, y, z, pic, h, w) {
     plateNode.setAttribute("class", "plate");
     plateNode.setAttribute("id", "pow");
     plateNode.setAttribute("style", "top:" + x + "px;left:" + y + "px;z-index:" + z + ";width:" + w + "px;height:" + h + "px;");
-    //plateNode.setAttribute("ondrop", "drop(event)");
-    //plateNode.setAttribute("ondragover", "allowDrop(event)");
     var newNode = document.createElement("img");
     plateNode.appendChild(newNode);
     newNode.setAttribute("id", pic);
@@ -161,8 +140,6 @@ function insert(x, y, z, pic, h, w) {
     plateNode.setAttribute("class", "plate");
     plateNode.setAttribute("id", "hdd");
     plateNode.setAttribute("style", "top:" + x + "px;left:" + y + "px;z-index:" + z + ";width:" + w + "px;height:" + h + "px;");
-    //plateNode.setAttribute("ondrop", "drop(event)");
-    //plateNode.setAttribute("ondragover", "allowDrop(event)");
     var newNode = document.createElement("img");
     plateNode.appendChild(newNode);
     newNode.setAttribute("id", pic);
@@ -590,7 +567,6 @@ function save() {//第一次用json就上手
 
 function start() {
   setInterval("check()", 300);
-  //document.getElementById("myvid").hidden=true;
   currentNode = document.getElementById("saveList");
   for (var i = 0; i < localStorage.length; i++) {
     var btn = document.createElement("button");
@@ -748,7 +724,7 @@ function boost() {
       }
     }
   }
-  if (!(document.getElementById(mb + "PciePlate").hasChildNodes() || document.getElementById("hdd").hasChildNodes())) {//有無開機碟
+  if (!(document.getElementById(mb + "PciePlate").hasChildNodes() || document.getElementById("hdd")!=null)) {//有無開機碟
     boom();
     setTimeout(function () { document.getElementById("boom").remove(); alert("沒有開機碟!"); vidplay=1;}, 3000);
     return;
