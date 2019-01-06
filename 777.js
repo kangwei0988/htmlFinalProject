@@ -24,7 +24,9 @@ window.fbAsyncInit = function () {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-function returnMenu(){
+
+
+/*function returnMenu(){
   var text = "這是我用這個網站配出來的電競神機，左打69核處理器，右打87G顯示卡<br>";
   text += "處理器: " + obj.CPU + "<br>";
   text += "主機板: " + obj.MB + "<br>";
@@ -39,7 +41,7 @@ function returnMenu(){
     text += "   " + obj.RAM4;
   text += "<br>獨立顯示卡: " + obj.VGA + "<br>";
   text += "電源供應器: " + obj.POW + "<br>";
-}
+}*/
 
 function allowDrop(ev) {
   ev.preventDefault();
@@ -501,6 +503,15 @@ function check() {
   text += "<br>獨立顯示卡: " + obj.VGA + "<br>";
   text += "電源供應器: " + obj.POW + "<br>";
   document.getElementById("explain2").innerHTML = text;
+  var shareTar = "這是我用這個網站配出來的電競神機，左打69核處理器，右打87G顯示卡<br>";
+  shareTar+=text;
+  document.getElementById('shareBtn').onclick = function() {
+    FB.ui({
+      method: 'share',
+      display: 'popup',
+      quote : shareTar,
+      href: 'https://kangwei0988.github.io/htmlFinalProject/%E6%9C%9F%E6%9C%AB%E5%B0%88%E6%A1%88',
+    }, function(response){});}
 }
 
 function deltag(tar) {
@@ -550,42 +561,6 @@ function save() {//第一次用json就上手
       return;
     }
   var x = document.getElementById("content").childNodes;
-  /*var ramCount = 1;
-  var obj = { CPU: 'none', MB: 'none', SSD: 'none', HDD: 'none', RAM1: 'none', RAM2: 'none', RAM3: 'none', RAM4: 'none', VGA: 'none', POW: 'none' };
-  for (var i = 0; i < x.length; i++) {
-    if (x[i].nodeName == "IMG" && x[i].id != "trash")
-      obj.MB = x[i].id;
-    else if (x[i].nodeName == "DIV") {
-      if (x[i].hasChildNodes) {
-        var t = x[i].childNodes;
-        for (var j = 0; j < t.length; j++) {
-          if (t[j].nodeName == "IMG") {//順序:cpu,mb,ssd,hdd,ram,vga,pow
-            if (whichType(t[j].id) == 0)
-              obj.CPU = t[j].id;
-            if (whichType(t[j].id) == 2)
-              obj.SSD = t[j].id;
-            if (whichType(t[j].id) == 3)
-              obj.HDD = t[j].id;
-            if (whichType(t[j].id) == 4) {
-              if (ramCount == 1)
-                obj.RAM1 = t[j].id.slice(2, t[j].id.length);
-              else if (ramCount == 2)
-                obj.RAM2 = t[j].id.slice(2, t[j].id.length);
-              else if (ramCount == 3)
-                obj.RAM3 = t[j].id.slice(2, t[j].id.length);
-              else if (ramCount == 4)
-                obj.RAM4 = t[j].id.slice(2, t[j].id.length);
-              ramCount++;
-            }
-            if (whichType(t[j].id) == 5)
-              obj.VGA = t[j].id;
-            if (whichType(t[j].id) == 6)
-              obj.POW = t[j].id;
-          }
-        }
-      }
-    }
-  }*/
   if(!document.getElementById("tag").value){
     window.alert("請輸入存檔名，不可空白呦!");
   }
@@ -643,9 +618,6 @@ function boom() {
   var newNode = document.createElement("img");
   newNode.setAttribute("src", "69082.gif");
   newNode.setAttribute("id", "boom");
-  /*newNode.setAttribute("style","z-index:10");
-  newNode.setAttribute("width","100%");
-  newNode.setAttribute("height","100%");*/
   currentNode.appendChild(newNode);
   vidplay=0;
 }
