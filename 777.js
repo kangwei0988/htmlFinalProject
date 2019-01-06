@@ -566,18 +566,22 @@ function save() {//第一次用json就上手
       }
     }
   }
+  if(!document.getElementById("tag").value){
+    window.alert("請輸入存檔名，不可空白呦!");
+  }
+  if(document.getElementById("tag").value){
   localStorage.setItem(document.getElementById("tag").value, JSON.stringify(obj));
   currentNode = document.getElementById("saveList");
   var btn = document.createElement("button");
   btn.innerHTML = "Delete";
   btn.setAttribute("type", "button");
-  btn.setAttribute("style", "width:40px;height:20px;");
+  btn.setAttribute("style", "position:absolute;right:5px;top:5px;width:40px;height:20px;");
   btn.setAttribute("onclick", "deltag('" + document.getElementById("tag").value + "')");
   var sbtn = document.createElement("button");
   sbtn.setAttribute("onclick", "show('" + document.getElementById('tag').value + "')");
   sbtn.innerHTML = "Read";
   sbtn.setAttribute("type", "button");
-  sbtn.setAttribute("style", "width:40px;height:20px;");
+  sbtn.setAttribute("style", "position:absolute;top:5px;right:45px;width:40px;height:20px;");
   var newNode = document.createElement("li");
   newNode.setAttribute("id", "savetag:" + document.getElementById("tag").value);
   newNode.innerHTML = document.getElementById("tag").value;
@@ -585,6 +589,7 @@ function save() {//第一次用json就上手
   newNode.appendChild(btn);
   currentNode.appendChild(newNode);
   window.alert("成功儲存 tag:" + document.getElementById("tag").value)
+  }
 }
 
 function start() {
