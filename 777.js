@@ -572,18 +572,19 @@ function save() {//第一次用json就上手
     window.alert("請輸入存檔名，不可空白呦!");
   }
   if(document.getElementById("tag").value){
+  document.getElementById("tag").setAttribute("float","left");
   localStorage.setItem(document.getElementById("tag").value, JSON.stringify(obj));
   currentNode = document.getElementById("saveList");
   var btn = document.createElement("button");
-  btn.innerHTML = "Delete";
+  btn.innerHTML = "刪除";
   btn.setAttribute("type", "button");
-  btn.setAttribute("style", "position:absolute;right:5px;top:5px;width:40px;height:20px;");
+  btn.setAttribute("style", ";width:55px;height:20px;border-radius: 8px; background-color: white");
   btn.setAttribute("onclick", "deltag('" + document.getElementById("tag").value + "')");
   var sbtn = document.createElement("button");
   sbtn.setAttribute("onclick", "show('" + document.getElementById('tag').value + "')");
-  sbtn.innerHTML = "Read";
+  sbtn.innerHTML = "讀取";
   sbtn.setAttribute("type", "button");
-  sbtn.setAttribute("style", "position:absolute;top:5px;right:45px;width:40px;height:20px;");
+  sbtn.setAttribute("style", "width:55px;height:20px;border-radius: 8px; background-color: white");
   var newNode = document.createElement("li");
   newNode.setAttribute("id", "savetag:" + document.getElementById("tag").value);
   newNode.innerHTML = document.getElementById("tag").value;
