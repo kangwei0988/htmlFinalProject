@@ -901,4 +901,4 @@ function introduce(){
 }
 
 
-document.addEventListener("mouseup", mouseOver, false);
+document.addEventListener("mouseover", mouseOver, false);
