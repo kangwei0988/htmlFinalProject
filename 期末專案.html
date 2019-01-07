@@ -21,11 +21,11 @@
         }
         #backbtn{
             position:absolute;
-            top: 80%;
-            left: 80%;
+            top: 75%;
+            left: 50%;
             z-index: 1011;
-            width: 80px;
-            height: 40px;
+            width: 180px;
+            height: 180px;
         }
         #backpic{
             position:absolute;
@@ -315,6 +315,7 @@
             z-index: 100;
             width: 100%;
             height: 100%;
+            top: 0%;
         }
         video{
             position: absolute;
@@ -426,8 +427,16 @@
     <div id="main">
        
         <div id="content">
-            <video id="myVideo" preload="auto" hidden>
-                <source src="chicken.mp4" type="video/mp4">
+            <video id="myVideo0" preload="auto" hidden>
+                <source src="0.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <video id="myVideo1" preload="auto" hidden>
+                <source src="1.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <video id="myVideo2" preload="auto" hidden>
+                <source src="2.mp4" type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
             <img id="trash" src="trash.png" ondrop="dropDel(event)" ondragover="allowDrop(event)" style="bottom:0px;right:0px; z-index: 1; height: 150px; width: 225px;">
