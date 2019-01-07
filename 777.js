@@ -498,6 +498,7 @@ function deltag(tar) {
 }
 
 function show(tag) {
+  if(vidplay==0) return;
   var obj = JSON.parse(localStorage.getItem(tag))
   var x = document.getElementById("content").childNodes;
   for (var i = x.length - 1; i >= 0; i--) {
