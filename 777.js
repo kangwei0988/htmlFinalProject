@@ -895,7 +895,6 @@ function introduce(){
   backbtn.setAttribute("onclick","doSomeThing()");
   backbtn.setAttribute("src","next.png");
   backbtn.setAttribute("id","backbtn");
-  backbtn.setAttribute("value","下一頁");
   currentNode.appendChild(backbtn);
 }
 
