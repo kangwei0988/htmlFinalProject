@@ -775,6 +775,7 @@ function boost() {
   }
   var ran = Math.floor(Math.random()*3);
   var vid = document.getElementById("myVideo"+ran);
+  console.log("myVideo"+ran);
   if(ran!=1)
     ran=0;
   //vid.hidden=false;
