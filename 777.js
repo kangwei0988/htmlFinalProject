@@ -789,8 +789,8 @@ function boost() {
   
   setTimeout(function () {newNode.remove();  vid.hidden = false; vid.volume = 0; vid.currentTime=0; vid.play();}, 2000);
   
-  setTimeout(function () { vid.hidden = true;  vidplay = 1; }, 10000+1000*ran);
-  setTimeout(function () { alert("組裝神機大成功!\n大吉大利，今晚打10個<3"); }, 10100+1000*ran);
+  setTimeout(function () { vid.hidden = true;  vidplay = 1; }, 12000+1000*ran);
+  setTimeout(function () { alert("組裝神機大成功!\n大吉大利，今晚打10個<3"); }, 12100+1000*ran);
 
 }//成功啟動  順序:cpu,mb,ssd,hdd,ram,vga,pow
 
