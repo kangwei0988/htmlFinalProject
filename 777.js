@@ -467,20 +467,20 @@ function check() {
     }
   }//end load
   var text = "";
-  text += "處理器: " + obj.CPU + "<br>";
-  text += "主機板: " + obj.MB + "<br>";
-  text += "固態硬碟: " + obj.SSD + "<br>";
-  text += "機械硬碟: " + obj.HDD + "<br>";
+  text += "處理器: " + obj.CPU + "\n";
+  text += "主機板: " + obj.MB + "\n";
+  text += "固態硬碟: " + obj.SSD + "\n";
+  text += "機械硬碟: " + obj.HDD + "\n";
   text += "記憶體: " + obj.RAM1;
   if (obj.RAM2 != "none")
     text += "   " + obj.RAM2;
   if (obj.RAM3 != "none")
-    text += "   " + obj.RAM3;
+    text += "\n   " + obj.RAM3;
   if (obj.RAM4 != "none")
     text += "   " + obj.RAM4;
-  text += "<br>獨立顯示卡: " + obj.VGA + "<br>";
-  text += "電源供應器: " + obj.POW + "<br>";
-  document.getElementById("explain2").innerHTML = text;
+  text += "\n獨立顯示卡: " + obj.VGA + "\n";
+  text += "電源供應器: " + obj.POW + "\n";
+  document.getElementById("explain2").innerText = text;
   var shareTar = "這是我用這個網站配出來的電競神機，左打69核處理器，右打87G顯示卡\n";
   shareTar+=text;
   document.getElementById('shareBtn').onclick = function() {
@@ -790,7 +790,7 @@ function boost() {
   setTimeout(function () {newNode.remove();  vid.hidden = false; vid.volume = 0; vid.play();}, 2000);
   
   setTimeout(function () { vid.hidden = true;  vidplay = 1; }, 12000+1000*ran);
-  setTimeout(function () { alert("組裝電腦大成功!\n大吉大利，今晚早點睡，幹你娘累暴"); }, 12100+1000*ran);
+  setTimeout(function () { alert("組裝神機大成功!\n大吉大利，今晚打10個<3"); }, 12100+1000*ran);
 
 }//成功啟動  順序:cpu,mb,ssd,hdd,ram,vga,pow
 
