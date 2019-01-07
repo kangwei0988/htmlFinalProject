@@ -572,13 +572,13 @@ function start() {
   currentNode = document.getElementById("saveList");
   for (var i = 0; i < localStorage.length; i++) {
     var btn = document.createElement("button");
-    btn.innerHTML = "Delete";
+    btn.innerHTML = "刪除";
     btn.setAttribute("type", "button");
     btn.setAttribute("style", "position:absolute;width:40px;height:20px;right:5px;top:5px;");
     btn.setAttribute("onclick", "deltag('" + localStorage.key(i) + "')");
     var sbtn = document.createElement("button");
     sbtn.setAttribute("onclick", "show('" + localStorage.key(i) + "')");
-    sbtn.innerHTML = "Read";
+    sbtn.innerHTML = "讀取";
     sbtn.setAttribute("type", "button");
     sbtn.setAttribute("style", "position:absolute;width:40px;height:20px;right:45px;top:5px;");
     var newNode = document.createElement("li");
